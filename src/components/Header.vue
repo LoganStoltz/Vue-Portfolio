@@ -23,7 +23,7 @@ export default defineComponent({
   top: 0;
   left: 0;     
   width: 100%;          
-  background-color: #505050;
+  background-color: #F5F7FA;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -34,19 +34,21 @@ export default defineComponent({
 
 .nav {
   display: flex;
-  gap: 2rem;
+  gap: 4rem;
 }
 
 .nav a {
   text-decoration: none;
-  color: #000000;
+  color: #0B1F3F; /* Deep Navy */
+  font-size: x-large;
   font-weight: bold;
   padding: 0.5rem 1rem;
-  border-radius: 4px;
+  border-radius: 10px;
   transition: background-color 0.3s;
 }
 
 .nav a:hover {
-  background-color: #e0e0e0;
+  background-color: #D4AF37; /* Warm Gold */
+  color: #F5F7FA;            /* Soft White */
 }
 </style>
