@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <Header />
+    <router-view />
   </div>
 </template>
 
@@ -22,5 +23,4 @@ export default defineComponent({
 </script>
 
 <style>
-/* You can leave this empty or add global styles */
 </style>
