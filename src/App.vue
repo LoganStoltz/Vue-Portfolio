@@ -1,22 +1,26 @@
-<script>
-export default {
-  data() {
-    return {
-      name: 'Logan Stoltz',
-      status: true
-    };
-  },
-}
-
-</script>
-
 <template>
-  <header class="Header" ref="headerRef" :style="styles">
-    <a href="#">Home</a>
-    <a href="#">Education</a>
-    <a href="#">Projects</a>
-    <a href="#">Contact Me</a>
-  </header>
+  <div id="app">
+    <Header />
+    <router-view />
+  </div>
 </template>
 
+<script lang="js">
+import { defineComponent } from 'vue';
+import Header from './components/Header.vue';
 
+export default defineComponent({
+  name: 'App',
+  components: {
+    Header
+  },
+  data() {
+    return {
+      name: 'Logan Stoltz'
+    };
+  }
+});
+</script>
+
+<style>
+</style>
