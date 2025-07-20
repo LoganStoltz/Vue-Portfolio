@@ -1,20 +1,38 @@
 <template>
   <header class="header">
+    <transition name="slideIn">
+       <nav class="nav" v-if="isVisible">
         <router-link to="/" class="btn-home">Home</router-link>
         <router-link to="/education" class="btn-education">Education</router-link>
         <router-link to="/projects" class="btn-projects">Projects</router-link>
         <router-link to="/contact" class="btn-contact">Contact Me</router-link>
+      </nav>
+    </transition>
   </header>
 </template>
 
-<script lang="ts">
-import { defineComponent, TransitionGroup } from 'vue';
+<script lang="js">
+import { defineComponent, ref, onMounted } from 'vue';
 
 export default defineComponent({
-  name: 'Header'
-});
+  name: 'Header',
+  setup() {
+    const isVisible = ref(false);
 
+    onMounted(() => {
+      // Trigger animation after mount
+      setTimeout(() => {
+        isVisible.value = true;
+      }, 100);
+    });
+
+    return {
+      isVisible
+    };
+  }
+});
 </script>
+
 
 <style scoped>
 
@@ -38,7 +56,6 @@ export default defineComponent({
 .nav {
   display: flex;
   gap: 4rem;
-  animation: slideIn 0.5s ease-out;
 }
 
 .nav a {
@@ -49,6 +66,7 @@ export default defineComponent({
   padding: 0.5rem 1rem;
   border-radius: 10px;
   transition: background-color 1s;
+
 }
 
 .nav a:hover {
@@ -57,14 +75,18 @@ export default defineComponent({
 }
 
 /* ANIMATION */
-@keyframes slideIn {
-  from {
-    transform: translateX(1000px);
-  }
-  to {
-    transform: translateX(0);
-  }
+.slideIn-enter-from {
+  transform: translateX(1000px);
 }
+
+.slideIn-enter-to {
+  transform: translateX(0);
+}
+
+.slideIn-enter-active {
+  transition: transform 1s ease;
+}
+
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
