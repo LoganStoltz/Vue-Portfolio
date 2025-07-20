@@ -35,10 +35,7 @@
         <h2>About Me</h2>
         <p>
           I’m a frontend developer with a passion for minimalist design, UX accessibility, and
-          performance optimization. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
-          Donec nec sapien vel turpis tincidunt tempor. Suspendisse potenti. Integer id justo in
-          velit accumsan lacinia at a magna.
+          performance optimization.
         </p>
       </div>
     </div>
