@@ -9,34 +9,36 @@
     </div>
 
     <!-- External Links Section -->
-    <div class="content">
-      <div class="section">
-        <h2>Connect with Me</h2>
-        <div class="links">
-          <a href="https://github.com/" target="_blank" rel="noopener" class="link-button">GitHub</a>
-          <a href="https://linkedin.com/" target="_blank" rel="noopener" class="link-button">LinkedIn</a>
-          <a href="mailto:logan@example.com" class="link-button">Email</a>
-          <a href="https://your-resume.com" target="_blank" rel="noopener" class="link-button">Résumé</a>
-        </div>
-      </div>
-
-      <!-- Mission Statement -->
-      <div class="section">
-        <h2>Mission Statement</h2>
-        <p>
-          I strive to design and build elegant, performant web interfaces that elevate user
-          experience and leave lasting impressions. My mission is to blend technical precision with
-          creative direction to produce high-quality digital products.
-        </p>
-      </div>
-
-      <!-- About Me -->
-      <div class="section">
+    <div class="content grid-layout">
+      <!-- LEFT: Large "About Me" -->
+      <div class="section about">
         <h2>About Me</h2>
         <p>
           I’m a frontend developer with a passion for minimalist design, UX accessibility, and
           performance optimization.
         </p>
+      </div>
+
+      <!-- RIGHT: Two stacked sections -->
+      <div class="side-stack">
+        <div class="section connect">
+          <h2>Connect with Me</h2>
+          <div class="links">
+            <a href="https://github.com/" target="_blank" rel="noopener" class="link-button">GitHub</a>
+            <a href="https://linkedin.com/" target="_blank" rel="noopener" class="link-button">LinkedIn</a>
+            <a href="mailto:logan@example.com" class="link-button">Email</a>
+            <a href="https://your-resume.com" target="_blank" rel="noopener" class="link-button">Résumé</a>
+          </div>
+        </div>
+
+        <div class="section mission">
+          <h2>Mission Statement</h2>
+          <p>
+            I strive to design and build elegant, performant web interfaces that elevate user
+            experience and leave lasting impressions. My mission is to blend technical precision with
+            creative direction to produce high-quality digital products.
+          </p>
+        </div>
       </div>
     </div>
   </section>
@@ -55,7 +57,7 @@ export default defineComponent({
 
 .home {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(to right, #f5f7fa, #b2faff);
+  background: linear-gradient(to right, #ffab85, #b2faff);
   color: #0b1f3f;
 }
 
@@ -67,18 +69,20 @@ export default defineComponent({
   justify-content: center;
   align-items: flex-start;
   padding: 4rem 5%;
-  background: linear-gradient(to right, #f5f7fa, #b2faff);
+  background: linear-gradient(to right, #ffab85, #b2faff);
   animation: fadeIn 1.2s ease-out;
 }
 
 .name {
-  font-size: 5rem;
+  font-size: 9rem;
   font-weight: 900;
-  background: linear-gradient(90deg, #0B1F3F, #3AAFA9);
+  background: linear-gradient(90deg, #00eeff, #0025fa);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 2rem;
-  line-height: 1.1;
+  line-height: 1.2;
+  margin: 0 auto;
+  margin-top: -10rem; /* adjust this value as needed */
 }
 
 .tagline {
@@ -87,6 +91,7 @@ export default defineComponent({
   font-weight: 500;
   max-width: 90%;
   line-height: 1.5;
+  margin: 0 auto;
 }
 
 /* MAIN CONTENT BELOW HERO */
@@ -144,6 +149,30 @@ export default defineComponent({
   transform: translateY(-3px);
 }
 
+.grid-layout {
+  display: grid;
+  grid-template-columns: 2fr 1.5fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* STACKED RIGHT SECTIONS */
+.side-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* SPECIAL HEIGHT FOR VISUAL BALANCE */
+.about {
+  height: 100%;
+}
+
+.connect,
+.mission {
+  flex: 1;
+}
+
 /* ANIMATION */
 @keyframes fadeIn {
   from {
@@ -181,6 +210,21 @@ export default defineComponent({
   .link-button {
     font-size: 1rem;
     padding: 0.8rem 1.2rem;
+  }
+
+    .grid-layout {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .side-stack {
+    flex-direction: column;
+  }
+
+  .about,
+  .connect,
+  .mission {
+    width: 100%;
   }
 }
 </style>
