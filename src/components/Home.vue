@@ -57,8 +57,8 @@ export default defineComponent({
 
 .home {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(to right, #ffab85, #b2faff);
-  color: #0b1f3f;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #f4f4f4;
 }
 
 /* HERO SECTION */
@@ -69,14 +69,14 @@ export default defineComponent({
   justify-content: center;
   align-items: flex-start;
   padding: 4rem 5%;
-  background: linear-gradient(to right, #ffab85, #b2faff);
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
   animation: fadeIn 1.2s ease-out;
 }
 
 .name {
   font-size: 9rem;
   font-weight: 900;
-  background: linear-gradient(90deg, #00eeff, #0025fa);
+  background: linear-gradient(90deg, #74ebd5, #ACB6E5);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 2rem;
@@ -102,7 +102,7 @@ export default defineComponent({
 
 /* SECTION BOX */
 .section {
-  background: #ffffff;
+  background: #f7f9fc;
   padding: 3rem 3rem;
   border-radius: 16px;
   box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
@@ -132,7 +132,7 @@ export default defineComponent({
 }
 
 .link-button {
-  background-color: #0B1F3F;
+  background-color: #1e3a5f;
   color: #F5F7FA;
   padding: 1rem 1.5rem;
   border-radius: 10px;
@@ -144,8 +144,8 @@ export default defineComponent({
 }
 
 .link-button:hover {
-  background-color: #D4AF37;
-  color: #0B1F3F;
+  background-color: #ffd166;
+  color: #1e3a5f;
   transform: translateY(-3px);
 }
 

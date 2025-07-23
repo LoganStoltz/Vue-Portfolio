@@ -43,7 +43,7 @@ export default defineComponent({
   left: 0;     
   width: 100%;  
   height: 6rem;        
-  background-color: #8d8d8d;
+  background-color: #1e425f;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -60,7 +60,7 @@ export default defineComponent({
 
 .nav a {
   text-decoration: none;
-  color: #ffffff; /* Deep Navy */
+  color: #f4f4f4;
   font-size: x-large;
   font-weight: bold;
   padding: 0.5rem 1rem;
@@ -70,8 +70,8 @@ export default defineComponent({
 }
 
 .nav a:hover {
-  background-color: #37d4c7; /* Warm Gold */
-  color: #01132e;            /* Soft White */
+  background-color: #ffd166; /* Warm Gold */
+  color: #1e3a5f;            /* Soft White */
 }
 
 /* ANIMATION */
