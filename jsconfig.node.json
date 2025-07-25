@@ -10,7 +10,7 @@
   ],
   "compilerOptions": {
     "noEmit": true,
-    "tsBuildInfoFile": "./node_modules/.tmp/jsconfig.node.jsbuildinfo",
+    "jsBuildInfoFile": "./node_modules/.tmp/jsconfig.node.jsbuildinfo",
 
     "module": "ESNext",
     "moduleResolution": "Bundler",

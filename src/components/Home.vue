@@ -2,7 +2,7 @@
   <section class="home">
     <!-- Hero Section -->
     <div class="hero">
-      <h1 class="name">Logan Stoltz</h1>
+      <h1 class="name"> {{ name }} </h1>
       <p class="tagline">
         Crafting modern web experiences with clean code and creative vision.
       </p>
@@ -49,6 +49,11 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   name: 'Home',
+  data() {
+    return {
+      name: 'Logan Stoltz'
+    };
+  }
 });
 </script>
 
@@ -82,7 +87,7 @@ export default defineComponent({
   margin-bottom: 2rem;
   line-height: 1.2;
   margin: 0 auto;
-  margin-top: -10rem; /* adjust this value as needed */
+  margin-top: -10rem;
 }
 
 .tagline {
