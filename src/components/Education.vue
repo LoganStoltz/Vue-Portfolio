@@ -1,13 +1,16 @@
 <template>
-  <div class="education-main-section">
-    <h1>Completed Coursework</h1>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor itaque ex eveniet asperiores...
-    </p>
+  <section class="education-main-section">
+    <div class="education-header">
+      <h1>Completed Coursework</h1>
+      <p>
+        A curated catalog of completed courses that reflect my core strengths in web development,
+        systems, and applied mathematics.
+      </p>
+    </div>
 
-    <transition-group name="fade" tag="div" class="classes-section">
+    <div class="classes-section">
       <div
-        class="class-container"
+        class="class-card"
         v-for="course in courses"
         :key="course.id"
       >
@@ -15,8 +18,8 @@
         <h3>{{ course.classNumber }}</h3>
         <p>{{ course.description }}</p>
       </div>
-    </transition-group>
-  </div>
+    </div>
+  </section>
 </template>
 
 <script lang="js">
@@ -57,35 +60,102 @@
 </script>
 
 <style scoped>
-  h1 {
-    color: green
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+.education-main-section {
+  font-family: 'Inter', sans-serif;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  color: #f4f4f4;
+  padding: 4rem 5%;
+}
+
+.education-header {
+  max-width: 900px;
+  margin: 0 auto 3rem;
+  text-align: center;
+}
+
+.education-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  background: linear-gradient(90deg, #74ebd5, #ACB6E5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 1rem;
+}
+
+.education-header p {
+  font-size: 1.25rem;
+  color: #d0d8e4;
+  line-height: 1.7;
+}
+
+/* GRID LAYOUT */
+.classes-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+/* COURSE CARD */
+.class-card {
+  background: #f7f9fc;
+  color: #1c2b38;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.class-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+
+.class-card h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1a73e8;
+  margin-bottom: 0.5rem;
+}
+
+.class-card h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #6b7a8f;
+  margin-bottom: 1rem;
+}
+
+.class-card p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .education-header h1 {
+    font-size: 2rem;
   }
 
-  p {
-    color:rgb(255, 0, 234);
+  .education-header p {
+    font-size: 1.1rem;
   }
 
-  .education-main-section {
-    background-color: bisque;
+  .class-card {
+    padding: 1.5rem;
   }
 
-  .classes-section {
-    background-color:cornflowerblue;
+  .class-card h2 {
+    font-size: 1.25rem;
   }
 
-  .class-container {
-    background-color: lightgreen;
+  .class-card h3 {
+    font-size: 0.95rem;
   }
 
-  .class-container h2 {
-    color: orangered
+  .class-card p {
+    font-size: 0.95rem;
   }
-
-  .class-container h3 {
-    color: purple
-  }
-
-  .class-container p {
-    color:brown;
-  }
+}
 </style>
