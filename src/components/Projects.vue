@@ -3,7 +3,7 @@
     <div class="projects-header">
       <h1>My Projects</h1>
       <p>
-        A showcase of work that combines thoughtful design and practical development.
+        A showcase of work that combines thoughtful design and practical development. (PLACEHOLDER)
       </p>
     </div>
 
@@ -13,10 +13,10 @@
         v-for="(project, index) in projects"
         :key="project.id"
         :class="{ 'reverse': index % 2 !== 0 }"
-      >
+      > <!--(project, index), The index is used to alternate which side the project displays on -->
         <div class="project-content">
           <h2>{{ project.title }}</h2>
-          <p>{{ project.description }}</p>
+          <p> {{ project.description }}</p>
         </div>
       </div>
     </div>
@@ -31,9 +31,9 @@ export default defineComponent({
     return {
       name: 'Projects',
       projects: [
-        { id: 1, title: 'Project 1', description: 'An elegant solution to XYZ problem.' },
-        { id: 2, title: 'Project 2', description: 'Built with Vue and Tailwind, this project showcases responsiveness and state management.' },
-        { id: 3, title: 'Project 3', description: 'A data visualization dashboard featuring D3.js and REST APIs.' }
+        { id: 1, title: 'Project 1', description: 'An elegant solution to XYZ problem. (PLACEHOLDER)' },
+        { id: 2, title: 'Project 2', description: 'Built with Vue and Tailwind, this project showcases responsiveness and state management. (PLACEHOLDER)' },
+        { id: 3, title: 'Project 3', description: 'A data visualization dashboard featuring D3.js and REST APIs. (PLACEHOLDER)' }
       ]
     };
   }

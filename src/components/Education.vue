@@ -4,7 +4,7 @@
       <h1>Completed Coursework</h1>
       <p>
         A curated catalog of completed courses that reflect my core strengths in web development,
-        systems, and applied mathematics.
+        systems, and applied mathematics. (PLACEHOLDER)
       </p>
     </div>
 

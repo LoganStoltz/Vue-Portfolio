@@ -4,7 +4,7 @@
     <div class="hero">
       <h1 class="name"> {{ name }} </h1>
       <p class="tagline">
-        Crafting modern web experiences with clean code and creative vision.
+        Crafting modern web experiences with clean code and creative vision. (PLACEHOLDER)
       </p>
     </div>
 
@@ -15,7 +15,7 @@
         <h2>About Me</h2>
         <p>
           I’m a frontend developer with a passion for minimalist design, UX accessibility, and
-          performance optimization.
+          performance optimization. (PLACEHOLDER)
         </p>
       </div>
 
@@ -36,7 +36,7 @@
           <p>
             I strive to design and build elegant, performant web interfaces that elevate user
             experience and leave lasting impressions. My mission is to blend technical precision with
-            creative direction to produce high-quality digital products.
+            creative direction to produce high-quality digital products. (PLACEHOLDER)
           </p>
         </div>
       </div>
