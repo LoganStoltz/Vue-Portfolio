@@ -15,3 +15,5 @@ Practice LeetCode Questions
 Animate all pages, add more details to each slide to make them stand out more
 
 Add Icons for all exteranal links like github and linkedin
+
+Add a Footer Component
