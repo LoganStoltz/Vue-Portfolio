@@ -35,6 +35,8 @@ export default defineComponent({
 
 
 <style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
 
 /* MAIN HEADER SECTION */
 .header {

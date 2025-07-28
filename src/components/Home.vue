@@ -13,10 +13,9 @@
       <!-- LEFT: Large "About Me" -->
       <div class="section about">
         <h2>About Me</h2>
-        <p>
-          I’m a frontend developer with a passion for minimalist design, UX accessibility, and
-          performance optimization. (PLACEHOLDER)
-        </p>
+        <p>My name is Logan Stoltz. I'm a Software Developer and a recent graduate from Eastern Washington University, where I earned my Bachelor of Science in Computer Science in June 2025</p>
+        <p>Through a combination of academic projects and personal development work, I’ve developed strong proficiency in technologies such as Java, Python, C#, HTML, CSS, JavaScript, and SQL. My education at EWU also covered key areas like cybersecurity, networking, mathematics, and full-stack application development—providing me with a solid and well-rounded foundation in software engineering.</p>
+        <p>I’m passionate about solving real-world problems through clean, scalable code. Whether I’m developing a web application or tackling a complex technical challenge, I bring a thoughtful, solution-oriented mindset to every project.</p>
       </div>
 
       <!-- RIGHT: Two stacked sections -->
@@ -33,11 +32,8 @@
 
         <div class="section mission">
           <h2>Mission Statement</h2>
-          <p>
-            I strive to design and build elegant, performant web interfaces that elevate user
-            experience and leave lasting impressions. My mission is to blend technical precision with
-            creative direction to produce high-quality digital products. (PLACEHOLDER)
-          </p>
+          <p>I am pursuing an opportunity as an intern or entry-level software developer to apply my technical competencies and commitment to professional growth in support of meaningful and innovative projects.</p>
+          <p>I aspire to develop my skills further through collaboration with experienced professionals and by engaging in challenging assignments that contribute to organizational success. I am dedicated to delivering high-quality results while continuously enhancing my expertise within a structured and collegial environment.</p>
         </div>
       </div>
     </div>
@@ -116,15 +112,17 @@ export default defineComponent({
 
 .section h2 {
   font-size: 2.5rem;
-  color: #0B1F3F;
-  margin-bottom: 1.5rem;
+  color: #000000;
   font-weight: 800;
+  text-align: center;
 }
 
 .section p {
-  font-size: 1.25rem;
-  color: #333;
+  font-size: 1.5rem;
+  color: #000000;
   line-height: 2;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 /* LINK BUTTONS */
@@ -165,12 +163,11 @@ export default defineComponent({
 .side-stack {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
 }
 
 /* SPECIAL HEIGHT FOR VISUAL BALANCE */
 .about {
-  height: 100%;
+  height: 94.5%;
 }
 
 .connect,
