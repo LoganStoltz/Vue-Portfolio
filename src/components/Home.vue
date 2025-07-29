@@ -3,38 +3,23 @@
     <!-- Hero Section -->
     <div class="hero">
       <h1 class="name"> {{ name }} </h1>
-      <p class="tagline">
-        Crafting modern web experiences with clean code and creative vision. (PLACEHOLDER)
-      </p>
+      <p class="tagline"> Im a Software Developer!</p>
+      <p class="tagline"> Feel free to look around to learn more about my projects and contributions.</p>
     </div>
 
-    <!-- External Links Section -->
-    <div class="content grid-layout">
-      <!-- LEFT: Large "About Me" -->
+
+    <div class="content">
+      <div class="section mission">
+        <h2>Mission Statement</h2>
+        <p>I am pursuing an opportunity as an intern or entry-level software developer to apply my technical competencies and commitment to professional growth in support of meaningful and innovative projects.</p>
+        <p>I aspire to develop my skills further through collaboration with experienced professionals and by engaging in challenging assignments that contribute to organizational success. I am dedicated to delivering high-quality results while continuously enhancing my expertise within a structured and collegial environment.</p>
+      </div>
+      
       <div class="section about">
         <h2>About Me</h2>
         <p>My name is Logan Stoltz. I'm a Software Developer and a recent graduate from Eastern Washington University, where I earned my Bachelor of Science in Computer Science in June 2025</p>
         <p>Through a combination of academic projects and personal development work, I’ve developed strong proficiency in technologies such as Java, Python, C#, HTML, CSS, JavaScript, and SQL. My education at EWU also covered key areas like cybersecurity, networking, mathematics, and full-stack application development—providing me with a solid and well-rounded foundation in software engineering.</p>
         <p>I’m passionate about solving real-world problems through clean, scalable code. Whether I’m developing a web application or tackling a complex technical challenge, I bring a thoughtful, solution-oriented mindset to every project.</p>
-      </div>
-
-      <!-- RIGHT: Two stacked sections -->
-      <div class="side-stack">
-        <div class="section connect">
-          <h2>Other Websites</h2>
-          <div class="links">
-            <a href="https://github.com/LoganStoltz" target="_blank" rel="noopener" class="link-button">GitHub</a>
-            <a href="https://www.linkedin.com/in/logan-stoltz/" target="_blank" rel="noopener" class="link-button">LinkedIn</a>
-            <a href="https://www.hackerrank.com/profile/loganstoltz1234" target="_blank" rel="noopener" class="link-button">HackerRank</a>
-            <a href="https://leetcode.com/u/lstoltz/" target="_blank" rel="noopener" class="link-button">LeetCode</a>
-          </div>
-        </div>
-
-        <div class="section mission">
-          <h2>Mission Statement</h2>
-          <p>I am pursuing an opportunity as an intern or entry-level software developer to apply my technical competencies and commitment to professional growth in support of meaningful and innovative projects.</p>
-          <p>I aspire to develop my skills further through collaboration with experienced professionals and by engaging in challenging assignments that contribute to organizational success. I am dedicated to delivering high-quality results while continuously enhancing my expertise within a structured and collegial environment.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -125,54 +110,11 @@ export default defineComponent({
   padding-bottom: 1rem;
 }
 
-/* LINK BUTTONS */
-.links {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 1.2rem;
-  margin-top: 1rem;
-}
-
-.link-button {
-  background-color: #1e3a5f;
-  color: #F5F7FA;
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: transform 0.2s, background-color 0.3s;
-  box-shadow: 0 6px 20px rgba(11, 31, 63, 0.15);
-}
-
-.link-button:hover {
-  background-color: #ffd166;
-  color: #1e3a5f;
-  transform: translateY(-3px);
-}
-
 .grid-layout {
-  display: grid;
-  grid-template-columns: 2fr 1.5fr;
-  gap: 2rem;
-  align-items: stretch;
-}
-
-/* STACKED RIGHT SECTIONS */
-.side-stack {
   display: flex;
   flex-direction: column;
-}
-
-/* SPECIAL HEIGHT FOR VISUAL BALANCE */
-.about {
-  height: 94.5%;
-}
-
-.connect,
-.mission {
-  flex: 1;
+  gap: 1rem;
+  align-items: stretch;
 }
 
 /* ANIMATION */

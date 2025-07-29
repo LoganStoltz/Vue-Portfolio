@@ -35,10 +35,10 @@ const form = reactive({
 });
 
 const conlinks = [
-  { id: 1, name: 'placeholder', link: 'placeholder' },
-  { id: 2, name: 'placeholder', link: 'placeholder' },
-  { id: 3, name: 'placeholder', link: 'placeholder' },
-  { id: 4, name: 'placeholder', link: 'placeholder' }
+  { id: 1, name: 'GitHub', link: 'https://github.com/LoganStoltz' },
+  { id: 2, name: 'LinkedIn', link: 'https://www.linkedin.com/in/logan-stoltz/' },
+  { id: 3, name: 'HackerRank', link: 'https://www.hackerrank.com/profile/loganstoltz1234' },
+  { id: 4, name: 'LeetCode', link: 'https://leetcode.com/u/lstoltz/' }
 ];
 
 function submitForm() {
@@ -52,6 +52,33 @@ function submitForm() {
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+/* LINK BUTTONS from home
+.links {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.link-button {
+  background-color: #1e3a5f;
+  color: #F5F7FA;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s, background-color 0.3s;
+  box-shadow: 0 6px 20px rgba(11, 31, 63, 0.15);
+}
+
+.link-button:hover {
+  background-color: #ffd166;
+  color: #1e3a5f;
+  transform: translateY(-3px);
+}*/
 
 .contact-main-section {
   font-family: 'Inter', sans-serif;
