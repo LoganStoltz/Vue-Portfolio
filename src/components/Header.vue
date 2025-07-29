@@ -5,6 +5,8 @@
         <router-link to="/" class="btn-home">Home</router-link>
         <router-link to="/education" class="btn-education">Education</router-link>
         <router-link to="/projects" class="btn-projects">Projects</router-link>
+        <router-link to="/externalLinks" class="btn-contact">External links</router-link>
+        <router-link to="/resume" class="btn-projects">Resume</router-link>
         <router-link to="/contact" class="btn-contact">Contact Me</router-link>
       </nav>
     </transition>
@@ -68,7 +70,6 @@ export default defineComponent({
   padding: 0.5rem 1rem;
   border-radius: 10px;
   transition: background-color 1s;
-
 }
 
 .nav a:hover {

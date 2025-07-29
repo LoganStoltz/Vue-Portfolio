@@ -21,12 +21,12 @@
       <!-- RIGHT: Two stacked sections -->
       <div class="side-stack">
         <div class="section connect">
-          <h2>Connect with Me</h2>
+          <h2>Other Websites</h2>
           <div class="links">
-            <a href="https://github.com/" target="_blank" rel="noopener" class="link-button">GitHub</a>
-            <a href="https://linkedin.com/" target="_blank" rel="noopener" class="link-button">LinkedIn</a>
-            <a href="mailto:logan@example.com" class="link-button">Email</a>
-            <a href="https://your-resume.com" target="_blank" rel="noopener" class="link-button">Résumé</a>
+            <a href="https://github.com/LoganStoltz" target="_blank" rel="noopener" class="link-button">GitHub</a>
+            <a href="https://www.linkedin.com/in/logan-stoltz/" target="_blank" rel="noopener" class="link-button">LinkedIn</a>
+            <a href="https://www.hackerrank.com/profile/loganstoltz1234" target="_blank" rel="noopener" class="link-button">HackerRank</a>
+            <a href="https://leetcode.com/u/lstoltz/" target="_blank" rel="noopener" class="link-button">LeetCode</a>
           </div>
         </div>
 
