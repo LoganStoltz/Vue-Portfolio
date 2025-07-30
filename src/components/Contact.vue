@@ -2,7 +2,7 @@
   <section class="contact-main-section">
     <div class="contact-header">
       <h1>Contact Me</h1>
-      <p>Thank you for your consideration</p>
+      <p>Welcome to the contact page, Thank you for your consideration.</p>
     </div>
 
     <form class="contact-form" @submit.prevent="submitForm">
@@ -55,8 +55,7 @@ function submitForm() {
 
 .contact-main-section {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  color: #f4f4f4;
+  background: var(--main-background-dark);
   padding: 4rem 5%;
   min-height: 100vh;
 }
@@ -69,25 +68,24 @@ function submitForm() {
 .contact-header h1 {
   font-size: 3rem;
   font-weight: 800;
-  background: linear-gradient(90deg, #74ebd5, #ACB6E5);
+  background: var(--heading-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
 }
 
 .contact-header p {
-  font-size: 1.25rem;
-  color: #d0d8e4;
+  font-size: 1.65rem;
+  color: var(--text-muted);
   line-height: 1.7;
 }
 
 /* Form */
 .contact-form {
-  background: #f7f9fc;
-  color: #1c2b38;
+  background: var(--background-light);
   padding: 2rem;
   border-radius: 16px;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--box-shadow-default);
   max-width: 1000px;
   margin: 0 auto;
 }
@@ -100,7 +98,7 @@ label {
   display: block;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #0B1F3F;
+  color: var(--text-dark-on-light);
 }
 
 input,
@@ -109,7 +107,7 @@ textarea {
   padding: 1rem;
   font-size: 1rem;
   border-radius: 10px;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
   font-family: 'Inter', sans-serif;
   resize: none;
 }
@@ -117,13 +115,12 @@ textarea {
 input:focus,
 textarea:focus {
   outline: none;
-  border-color: #1a73e8;
-  box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+  border: 2px solid var(--accent-blue);
 }
 
 .submit-button {
-  background-color: #1e3a5f;
-  color: #f7f9fc;
+  background-color: var(--background-blue);
+  color: var(--text-primary);
   padding: 1rem 2rem;
   border: none;
   border-radius: 10px;
@@ -135,8 +132,8 @@ textarea:focus {
 }
 
 .submit-button:hover {
-  background-color: #ffd166;
-  color: #1e3a5f;
+  background-color: var(--accent-yellow);
+  color: var(--background-blue);
 }
 
 /* Responsive */

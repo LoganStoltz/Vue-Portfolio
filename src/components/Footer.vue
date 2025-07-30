@@ -15,7 +15,7 @@ export default {
 
 .footer {
     font-family: 'Inter', sans-serif;
-    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    background: var(--main-background-dark);
     position: relative;
     width: 100%;  
     height: 6rem;
@@ -27,7 +27,7 @@ export default {
 }
 
 p {
-    color: #f4f4f4;
+    color: var(--text-primary);
     font-size: x-large;
     font-weight: bold;
     line-height: 1.7;

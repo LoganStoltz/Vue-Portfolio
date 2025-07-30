@@ -2,19 +2,22 @@
   <section class="contact-main-section">
     <div class="contact-header">
       <h1>Links and Social Media</h1>
-      <p>Welcome to the contact page. Reach out using any method below!</p>
+      <p> Welcome to the links and External wepsites page, feel free to look at all my work and contributions</p>
     </div>
 
     <div class="contact-section">
       <div class="contact-links">
-        <div
+        <a
           class="contact-link"
+          target="_blank"
+          rel="noopener"
           v-for="conlink in conlinks"
           :key="conlink.id"
+          :href="conlink.link"
         >
           <h3>{{ conlink.name }}</h3>
-          <a :href="conlink.link" target="_blank" rel="noopener">{{ conlink.link }}</a>
-        </div>
+          <component :is="conlink.icon" width="50" height="50" />
+        </a>
       </div>
 
       <div class="contact-image">
@@ -26,6 +29,10 @@
 
 <script setup>
 import { reactive } from 'vue';
+import GithubIcon from '@/assets/github.svg';
+import LinkedInIcon from '@/assets/linkedin.svg';
+import HackerRankIcon from '@/assets/hackerrank.svg';
+import LeetCodeIcon from '@/assets/leetcode.svg';
 
 const form = reactive({
   name: '',
@@ -35,55 +42,19 @@ const form = reactive({
 });
 
 const conlinks = [
-  { id: 1, name: 'GitHub', link: 'https://github.com/LoganStoltz' },
-  { id: 2, name: 'LinkedIn', link: 'https://www.linkedin.com/in/logan-stoltz/' },
-  { id: 3, name: 'HackerRank', link: 'https://www.hackerrank.com/profile/loganstoltz1234' },
-  { id: 4, name: 'LeetCode', link: 'https://leetcode.com/u/lstoltz/' }
+  { id: 1, name: 'GitHub', link: 'https://github.com/LoganStoltz', icon: GithubIcon},
+  { id: 2, name: 'LinkedIn', link: 'https://www.linkedin.com/in/logan-stoltz/', icon: LinkedInIcon},
+  { id: 3, name: 'HackerRank', link: 'https://www.hackerrank.com/profile/loganstoltz1234', icon: HackerRankIcon},
+  { id: 4, name: 'LeetCode', link: 'https://leetcode.com/u/lstoltz/', icon: LeetCodeIcon}
 ];
-
-function submitForm() {
-  alert(`Thanks, ${form.name}! Your message has been sent.`);
-  form.name = '';
-  form.email = '';
-  form.phone = '';
-  form.message = '';
-}
 </script>
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
-/* LINK BUTTONS from home
-.links {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 1.2rem;
-  margin-top: 1rem;
-}
-
-.link-button {
-  background-color: #1e3a5f;
-  color: #F5F7FA;
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: transform 0.2s, background-color 0.3s;
-  box-shadow: 0 6px 20px rgba(11, 31, 63, 0.15);
-}
-
-.link-button:hover {
-  background-color: #ffd166;
-  color: #1e3a5f;
-  transform: translateY(-3px);
-}*/
-
 .contact-main-section {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  color: #f4f4f4;
+  background: var(--main-background-dark);
   padding: 4rem 5%;
   min-height: 100vh;
 }
@@ -96,15 +67,15 @@ function submitForm() {
 .contact-header h1 {
   font-size: 3rem;
   font-weight: 800;
-  background: linear-gradient(90deg, #74ebd5, #ACB6E5);
+  background: var(--heading-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
 }
 
 .contact-header p {
-  font-size: 1.25rem;
-  color: #d0d8e4;
+  font-size: 1.65rem;
+  color: var(--text-muted);
   line-height: 1.7;
 }
 
@@ -120,29 +91,38 @@ function submitForm() {
 .contact-links {
   flex: 1;
   display: flex;
+  justify-content: flex-start;
   flex-direction: column;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.contact-links a {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .contact-link {
-  background: #f7f9fc;
-  color: #1c2b38;
+  background: var(--background-light);
   padding: 1.5rem;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--box-shadow-default);
+  transition: transform 0.2s, background-color 0.3s;
+  text-decoration: none;
+}
+
+.contact-link:hover {
+  background-color: var(--accent-yellow);
+  transform: translateY(-3px);
 }
 
 .contact-link h3 {
-  font-size: 1.25rem;
+  font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
-  color: #1a73e8;
-}
-
-.contact-link a {
-  font-size: 1rem;
-  color: #333;
-  word-break: break-all;
+  color: var(--accent-blue);
 }
 
 /* Image */

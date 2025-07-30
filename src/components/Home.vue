@@ -43,8 +43,7 @@ export default defineComponent({
 
 .home {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  color: #f4f4f4;
+  background: var(--main-background-dark);
 }
 
 /* HERO SECTION */
@@ -55,14 +54,14 @@ export default defineComponent({
   justify-content: center;
   align-items: flex-start;
   padding: 4rem 5%;
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  background: var(--main-background-dark);
   animation: fadeIn 1.2s ease-out;
 }
 
 .name {
   font-size: 9rem;
   font-weight: 900;
-  background: linear-gradient(90deg, #74ebd5, #ACB6E5);
+  background: var(--heading-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 2rem;
@@ -73,10 +72,10 @@ export default defineComponent({
 
 .tagline {
   font-size: 2rem;
-  color: #6b7a8f;
+  color: var(--text-muted);
   font-weight: 500;
   max-width: 90%;
-  line-height: 1.5;
+  line-height: 1.7;
   margin: 0 auto;
 }
 
@@ -88,16 +87,16 @@ export default defineComponent({
 
 /* SECTION BOX */
 .section {
-  background: #f7f9fc;
+  background: var(--background-light);
   padding: 3rem 3rem;
   border-radius: 16px;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--box-shadow-default);
   margin-bottom: 4rem;
 }
 
 .section h2 {
   font-size: 2.5rem;
-  color: #000000;
+  color: var(--accent-blue);
   font-weight: 800;
   text-align: center;
 }

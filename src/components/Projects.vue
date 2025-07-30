@@ -45,8 +45,7 @@ export default defineComponent({
 
 .projects-main-section {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  color: #f4f4f4;
+  background: var(--main-background-dark);
   margin: 0;
   padding: 0;
 }
@@ -61,16 +60,17 @@ export default defineComponent({
 .projects-header h1 {
   font-size: 3rem;
   font-weight: 800;
-  background: linear-gradient(90deg, #74ebd5, #ACB6E5);
+  background: var(--heading-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
 }
 
 .projects-header p {
-  font-size: 1.25rem;
-  color: #d0d8e4;
+  font-size: 1.65rem;
+  color: var(--text-muted);
   line-height: 1.7;
+  padding-bottom: 4rem;
 }
 
 .projects-section {
@@ -81,15 +81,14 @@ export default defineComponent({
 
 .project-card {
   min-height: 85vh;
-  background: #f7f9fc;
-  color: #1c2b38;
+  background: var(--background-light);
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 4rem 5%;
   box-sizing: border-box;
   width: 100%;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--box-shadow-default);
 }
 
 /* Content wrapper */
@@ -101,14 +100,14 @@ export default defineComponent({
 .project-content h2 {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #1a73e8;
+  color: var(--accent-blue);
   margin-bottom: 1rem;
 }
 
 .project-content p {
   font-size: 1.25rem;
   line-height: 1.7;
-  color: #333;
+  color: var(--text-dark-on-light);
 }
 
 /* Alternating layout */
