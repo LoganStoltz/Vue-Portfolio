@@ -1,42 +1,75 @@
 <template>
   <section class="home">
     <!-- Hero Section -->
-    <div class="hero">
-      <h1 class="name"> {{ name }} </h1>
-      <p class="tagline"> Im a Software Developer!</p>
-      <p class="tagline"> Feel free to look around to learn more about my projects and contributions.</p>
-    </div>
-
+    <transition name="fade" @after-enter="revealNextSection">
+      <div class="hero" v-if="visibleSections.hero">
+        <h1 class="name">{{ name }}</h1>
+        <p class="tagline">I'm a Software Developer!</p>
+        <p class="tagline">Feel free to look around to learn more about my projects and contributions.</p>
+      </div>
+    </transition>
 
     <div class="content">
-      <div class="section mission">
-        <h2>Mission Statement</h2>
-        <p>I am pursuing an opportunity as an intern or entry-level software developer to apply my technical competencies and commitment to professional growth in support of meaningful and innovative projects.</p>
-        <p>I aspire to develop my skills further through collaboration with experienced professionals and by engaging in challenging assignments that contribute to organizational success. I am dedicated to delivering high-quality results while continuously enhancing my expertise within a structured and collegial environment.</p>
-      </div>
-      
-      <div class="section about">
-        <h2>About Me</h2>
-        <p>My name is Logan Stoltz. I'm a Software Developer and a recent graduate from Eastern Washington University, where I earned my Bachelor of Science in Computer Science in June 2025</p>
-        <p>Through a combination of academic projects and personal development work, I’ve developed strong proficiency in technologies such as Java, Python, C#, HTML, CSS, JavaScript, and SQL. My education at EWU also covered key areas like cybersecurity, networking, mathematics, and full-stack application development—providing me with a solid and well-rounded foundation in software engineering.</p>
-        <p>I’m passionate about solving real-world problems through clean, scalable code. Whether I’m developing a web application or tackling a complex technical challenge, I bring a thoughtful, solution-oriented mindset to every project.</p>
-      </div>
+      <transition name="fade" @after-enter="revealNextSection">
+        <div class="section mission" v-if="visibleSections.mission">
+          <h2>Mission Statement</h2>
+          <p>I am pursuing an opportunity as an intern or entry-level software developer to apply my technical competencies and commitment to professional growth in support of meaningful and innovative projects.</p>
+          <p>I aspire to develop my skills further through collaboration with experienced professionals and by engaging in challenging assignments that contribute to organizational success. I am dedicated to delivering high-quality results while continuously enhancing my expertise within a structured and collegial environment.</p>
+        </div>
+      </transition>
+
+      <transition name="fade" @after-enter="revealNextSection">
+        <div class="section about" v-if="visibleSections.about">
+          <h2>About Me</h2>
+          <p>My name is Logan Stoltz. I'm a Software Developer and a recent graduate from Eastern Washington University, where I earned my Bachelor of Science in Computer Science in June 2025.</p>
+          <p>Through a combination of academic projects and personal development work, I’ve developed strong proficiency in technologies such as Java, Python, C#, HTML, CSS, JavaScript, and SQL...</p>
+          <p>I’m passionate about solving real-world problems through clean, scalable code. Whether I’m developing a web application or tackling a complex technical challenge, I bring a thoughtful, solution-oriented mindset to every project.</p>
+        </div>
+      </transition>
     </div>
   </section>
 </template>
 
-<script lang="js">
-import { defineComponent } from 'vue';
+
+<script>
+import { defineComponent, ref, onMounted } from 'vue';
 
 export default defineComponent({
   name: 'Home',
-  data() {
+  setup() {
+    const name = 'Logan Stoltz';
+
+    const visibleSections = ref({
+      hero: false,
+      mission: false,
+      about: false,
+    });
+
+    const sectionOrder = ['hero', 'mission', 'about'];
+    let current = 0;
+
+    const revealNextSection = () => {
+      current += 1;
+      if (current < sectionOrder.length) {
+        const next = sectionOrder[current];
+        visibleSections.value[next] = true;
+      }
+    };
+
+    onMounted(() => {
+      // Start the animation
+      visibleSections.value.hero = true;
+    });
+
     return {
-      name: 'Logan Stoltz'
+      name,
+      visibleSections,
+      revealNextSection,
     };
   }
 });
 </script>
+
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
@@ -55,7 +88,6 @@ export default defineComponent({
   align-items: flex-start;
   padding: 4rem 5%;
   background: var(--main-background-dark);
-  animation: fadeIn 1.2s ease-out;
 }
 
 .name {
@@ -116,16 +148,18 @@ export default defineComponent({
   align-items: stretch;
 }
 
+
 /* ANIMATION */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.fade-enter-active {
+  transition: all 0.6s ease;
+}
+.fade-enter-from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.fade-enter-to {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* RESPONSIVE */

@@ -57,4 +57,16 @@ export default defineComponent({
   --radius-large: 16px;
 }
 
+
+.slide-in-enter-active {
+  transition: all 0.5s ease;
+}
+.slide-in-enter-from {
+  opacity: 0;
+  transform: translateX(100px);
+}
+.slide-in-enter-to {
+  opacity: 1;
+  transform: translateX(0);
+}
 </style>

@@ -1,16 +1,18 @@
 <template>
   <section class="projects-main-section">
-    <div class="projects-header">
-      <h1>My Projects</h1>
-      <p>
-        A showcase of work that combines thoughtful design and practical development. (PLACEHOLDER)
-      </p>
-    </div>
+    <transition name="slide-in">
+      <div class="projects-header" v-if="visibleHeader">
+        <h1>My Projects</h1>
+        <p>
+          A showcase of work that combines thoughtful design and practical development. (PLACEHOLDER)
+        </p>
+      </div>
+    </transition>
 
-    <div class="projects-section">
+    <transition-group name="fade" tag="div" class="projects-section">
       <div
         class="project-card"
-        v-for="(project, index) in projects"
+        v-for="(project, index) in visibleProjects"
         :key="project.id"
         :class="{ 'reverse': index % 2 !== 0 }"
       > <!--(project, index), The index is used to alternate which side the project displays on -->
@@ -19,24 +21,40 @@
           <p> {{ project.description }}</p>
         </div>
       </div>
-    </div>
+    </transition-group>
   </section>
 </template>
 
 <script>
-import { defineComponent } from 'vue';
+import { defineComponent, ref, onMounted } from 'vue';
 
 export default defineComponent({
-  data() {
-    return {
-      name: 'Projects',
-      projects: [
+  name: 'Projects',
+  setup() {
+      const allProjects = [
         { id: 1, title: 'Project 1', description: 'An elegant solution to XYZ problem. (PLACEHOLDER)' },
         { id: 2, title: 'Project 2', description: 'Built with Vue and Tailwind, this project showcases responsiveness and state management. (PLACEHOLDER)' },
         { id: 3, title: 'Project 3', description: 'A data visualization dashboard featuring D3.js and REST APIs. (PLACEHOLDER)' }
-      ]
-    };
-  }
+      ];
+
+      const visibleHeader = ref(false);
+      const visibleProjects = ref([]);
+      const delay = 900; 
+
+      onMounted(() =>{
+        visibleHeader.value = true;
+        allProjects.forEach((project, index) => {
+          setTimeout(() => {
+            visibleProjects.value.push(project);
+          }, index * delay);
+        });
+      });
+      
+      return {
+        visibleHeader,
+        visibleProjects
+      };
+    }
 });
 </script>
 
@@ -121,6 +139,19 @@ export default defineComponent({
 
 .project-card.reverse .project-content {
   text-align: right;
+}
+
+/* ANIMATION */
+.fade-enter-active {
+  transition: all 0.5s ease;
+}
+.fade-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.fade-enter-to {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Responsive */
