@@ -59,11 +59,11 @@ export default defineComponent({
 
 
 .slide-in-enter-active {
-  transition: all 0.5s ease;
+  transition: all 0.75s ease;
 }
 .slide-in-enter-from {
   opacity: 0;
-  transform: translateX(100px);
+  transform: translateX(300px);
 }
 .slide-in-enter-to {
   opacity: 1;

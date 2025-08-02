@@ -1,9 +1,11 @@
 <template>
   <section class="contact-main-section">
-    <div class="contact-header">
-      <h1>Contact Me</h1>
-      <p>Welcome to the contact page, Thank you for your consideration.</p>
-    </div>
+    <transition name="slide-in">
+      <div class="contact-header" v-if="visibleHeader">
+        <h1>Contact Me</h1>
+        <p>Welcome to the contact page, Thank you for your consideration.</p>
+      </div>
+    </transition>
 
     <form class="contact-form" @submit.prevent="submitForm">
       <div class="form-group">
@@ -31,23 +33,41 @@
   </section>
 </template>
 
-<script setup>
+<script>
 import { reactive } from 'vue';
+import { defineComponent, ref, onMounted } from 'vue';
 
-const form = reactive({
-  name: '',
-  email: '',
-  phone: '',
-  message: ''
+export default defineComponent({
+  name: 'Contact Me',
+  setup() {
+    const visibleHeader = ref(false);
+
+    const form = reactive({
+      name: '',
+      email: '',
+      phone: '',
+      message: ''
+    });
+
+    const submitForm = () => {
+      alert(`Thanks, ${form.name}! Your message has been sent.`);
+      form.name = '';
+      form.email = '';
+      form.phone = '';
+      form.message = '';
+    }
+    
+    onMounted(() => {
+      visibleHeader.value = true;
+    });
+
+    return {
+      visibleHeader,
+      form,
+      submitForm
+    };
+  }
 });
-
-function submitForm() {
-  alert(`Thanks, ${form.name}! Your message has been sent.`);
-  form.name = '';
-  form.email = '';
-  form.phone = '';
-  form.message = '';
-}
 </script>
 
 <style scoped>
@@ -58,6 +78,7 @@ function submitForm() {
   background: var(--main-background-dark);
   padding: 4rem 5%;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .contact-header {

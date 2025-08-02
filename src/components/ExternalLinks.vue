@@ -1,24 +1,25 @@
 <template>
   <section class="contact-main-section">
-    <div class="contact-header">
-      <h1>Links and Social Media</h1>
-      <p> Welcome to the links and External wepsites page, feel free to look at all my work and contributions</p>
-    </div>
-
+    <transition name="slide-in">
+      <div class="contact-header" v-if="visibleHeader">
+        <h1>Links and Social Media</h1>
+        <p> Welcome to the links and External wepsites page. Feel free to look at all my work and contributions</p>
+      </div>
+    </transition>
     <div class="contact-section">
-      <div class="contact-links">
+      <transition-group name="fade" tag="div" class="contact-links">
         <a
           class="contact-link"
           target="_blank"
           rel="noopener"
-          v-for="conlink in conlinks"
+          v-for="conlink in visibleConlinks"
           :key="conlink.id"
           :href="conlink.link"
         >
           <h3>{{ conlink.name }}</h3>
           <component :is="conlink.icon" width="50" height="50" />
         </a>
-      </div>
+      </transition-group>
 
       <div class="contact-image">
         <img src="@/assets/contact-page-image.png.png" alt="Logan Stoltz" />
@@ -27,26 +28,42 @@
   </section>
 </template>
 
-<script setup>
-import { reactive } from 'vue';
+<script>
+import { defineComponent, ref, onMounted } from 'vue';
 import GithubIcon from '@/assets/github.svg';
 import LinkedInIcon from '@/assets/linkedin.svg';
 import HackerRankIcon from '@/assets/hackerrank.svg';
 import LeetCodeIcon from '@/assets/leetcode.svg';
 
-const form = reactive({
-  name: '',
-  email: '',
-  phone: '',
-  message: ''
-});
+export default defineComponent({
+  name: 'Links',
+  setup() {
+    const allConlinks = [
+      { id: 1, name: 'GitHub', link: 'https://github.com/LoganStoltz', icon: GithubIcon},
+      { id: 2, name: 'LinkedIn', link: 'https://www.linkedin.com/in/logan-stoltz/', icon: LinkedInIcon},
+      { id: 3, name: 'HackerRank', link: 'https://www.hackerrank.com/profile/loganstoltz1234', icon: HackerRankIcon},
+      { id: 4, name: 'LeetCode', link: 'https://leetcode.com/u/lstoltz/', icon: LeetCodeIcon}
+    ];
 
-const conlinks = [
-  { id: 1, name: 'GitHub', link: 'https://github.com/LoganStoltz', icon: GithubIcon},
-  { id: 2, name: 'LinkedIn', link: 'https://www.linkedin.com/in/logan-stoltz/', icon: LinkedInIcon},
-  { id: 3, name: 'HackerRank', link: 'https://www.hackerrank.com/profile/loganstoltz1234', icon: HackerRankIcon},
-  { id: 4, name: 'LeetCode', link: 'https://leetcode.com/u/lstoltz/', icon: LeetCodeIcon}
-];
+    const visibleHeader = ref(false);
+    const visibleConlinks = ref([]);
+    const delay = 500;
+
+    onMounted(() => {
+      visibleHeader.value = true;
+      allConlinks.forEach((conlink, index) => {
+        setTimeout(() => {
+          visibleConlinks.value.push(conlink);
+        }, index * delay);
+      });
+    });
+
+    return {
+      visibleHeader,
+      visibleConlinks
+    };
+  }
+});
 </script>
 
 <style scoped>
@@ -57,6 +74,7 @@ const conlinks = [
   background: var(--main-background-dark);
   padding: 4rem 5%;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .contact-header {
@@ -137,6 +155,18 @@ const conlinks = [
   max-width: 100%;
   max-height: 533px;
   border-radius: 16px;
+}
+
+.fade-enter-active {
+  transition: all 0.5s ease;
+}
+.fade-enter-from {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.fade-enter-to {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* Responsive */
