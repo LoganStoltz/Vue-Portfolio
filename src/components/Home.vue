@@ -1,69 +1,82 @@
 <template>
   <section class="home">
     <!-- Hero Section -->
-    <div class="hero">
-      <h1 class="name"> {{ name }} </h1>
-      <p class="tagline">
-        Crafting modern web experiences with clean code and creative vision.
-      </p>
-    </div>
-
-    <!-- External Links Section -->
-    <div class="content grid-layout">
-      <!-- LEFT: Large "About Me" -->
-      <div class="section about">
-        <h2>About Me</h2>
-        <p>
-          I’m a frontend developer with a passion for minimalist design, UX accessibility, and
-          performance optimization.
-        </p>
+    <transition name="fade" @after-enter="revealNextSection">
+      <div class="hero" v-if="visibleSections.hero">
+        <h1 class="name">{{ name }}</h1>
+        <p class="tagline">I'm a Software Developer!</p>
+        <p class="tagline">Feel free to look around to learn more about my projects and contributions.</p>
       </div>
+    </transition>
 
-      <!-- RIGHT: Two stacked sections -->
-      <div class="side-stack">
-        <div class="section connect">
-          <h2>Connect with Me</h2>
-          <div class="links">
-            <a href="https://github.com/" target="_blank" rel="noopener" class="link-button">GitHub</a>
-            <a href="https://linkedin.com/" target="_blank" rel="noopener" class="link-button">LinkedIn</a>
-            <a href="mailto:logan@example.com" class="link-button">Email</a>
-            <a href="https://your-resume.com" target="_blank" rel="noopener" class="link-button">Résumé</a>
-          </div>
-        </div>
-
-        <div class="section mission">
+    <div class="content">
+      <transition name="fade" @after-enter="revealNextSection">
+        <div class="section mission" v-if="visibleSections.mission">
           <h2>Mission Statement</h2>
-          <p>
-            I strive to design and build elegant, performant web interfaces that elevate user
-            experience and leave lasting impressions. My mission is to blend technical precision with
-            creative direction to produce high-quality digital products.
-          </p>
+          <p>I am pursuing an opportunity as an intern or entry-level software developer to apply my technical competencies and commitment to professional growth in support of meaningful and innovative projects.</p>
+          <p>I aspire to develop my skills further through collaboration with experienced professionals and by engaging in challenging assignments that contribute to organizational success. I am dedicated to delivering high-quality results while continuously enhancing my expertise within a structured and collegial environment.</p>
         </div>
-      </div>
+      </transition>
+
+      <transition name="fade" @after-enter="revealNextSection">
+        <div class="section about" v-if="visibleSections.about">
+          <h2>About Me</h2>
+          <p>My name is Logan Stoltz. I'm a Software Developer and a recent graduate from Eastern Washington University, where I earned my Bachelor of Science in Computer Science in June 2025.</p>
+          <p>Through a combination of academic projects and personal development work, I’ve developed strong proficiency in technologies such as Java, Python, C#, HTML, CSS, JavaScript, and SQL...</p>
+          <p>I’m passionate about solving real-world problems through clean, scalable code. Whether I’m developing a web application or tackling a complex technical challenge, I bring a thoughtful, solution-oriented mindset to every project.</p>
+        </div>
+      </transition>
     </div>
   </section>
 </template>
 
-<script lang="js">
-import { defineComponent } from 'vue';
+
+<script>
+import { defineComponent, ref, onMounted } from 'vue';
 
 export default defineComponent({
   name: 'Home',
-  data() {
+  setup() {
+    const name = 'Logan Stoltz';
+
+    const visibleSections = ref({
+      hero: false,
+      mission: false,
+      about: false,
+    });
+
+    const sectionOrder = ['hero', 'mission', 'about'];
+    let current = 0;
+
+    const revealNextSection = () => {
+      current += 1;
+      if (current < sectionOrder.length) {
+        const next = sectionOrder[current];
+        visibleSections.value[next] = true;
+      }
+    };
+
+    onMounted(() => {
+      // Start the animation
+      visibleSections.value.hero = true;
+    });
+
     return {
-      name: 'Logan Stoltz'
+      name,
+      visibleSections,
+      revealNextSection,
     };
   }
 });
 </script>
+
 
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
 .home {
   font-family: 'Inter', sans-serif;
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  color: #f4f4f4;
+  background: var(--main-background-dark);
 }
 
 /* HERO SECTION */
@@ -74,14 +87,13 @@ export default defineComponent({
   justify-content: center;
   align-items: flex-start;
   padding: 4rem 5%;
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  animation: fadeIn 1.2s ease-out;
+  background: var(--main-background-dark);
 }
 
 .name {
   font-size: 9rem;
   font-weight: 900;
-  background: linear-gradient(90deg, #74ebd5, #ACB6E5);
+  background: var(--heading-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 2rem;
@@ -92,10 +104,10 @@ export default defineComponent({
 
 .tagline {
   font-size: 2rem;
-  color: #6b7a8f;
+  color: var(--text-muted);
   font-weight: 500;
   max-width: 90%;
-  line-height: 1.5;
+  line-height: 1.7;
   margin: 0 auto;
 }
 
@@ -107,87 +119,47 @@ export default defineComponent({
 
 /* SECTION BOX */
 .section {
-  background: #f7f9fc;
+  background: var(--background-light);
   padding: 3rem 3rem;
   border-radius: 16px;
-  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.08);
+  box-shadow: var(--box-shadow-default);
   margin-bottom: 4rem;
 }
 
 .section h2 {
   font-size: 2.5rem;
-  color: #0B1F3F;
-  margin-bottom: 1.5rem;
+  color: var(--accent-blue);
   font-weight: 800;
+  text-align: center;
 }
 
 .section p {
-  font-size: 1.25rem;
-  color: #333;
+  font-size: 1.5rem;
+  color: #000000;
   line-height: 2;
-}
-
-/* LINK BUTTONS */
-.links {
-  display: flex;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-  gap: 1.2rem;
-  margin-top: 1rem;
-}
-
-.link-button {
-  background-color: #1e3a5f;
-  color: #F5F7FA;
-  padding: 1rem 1.5rem;
-  border-radius: 10px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-decoration: none;
-  transition: transform 0.2s, background-color 0.3s;
-  box-shadow: 0 6px 20px rgba(11, 31, 63, 0.15);
-}
-
-.link-button:hover {
-  background-color: #ffd166;
-  color: #1e3a5f;
-  transform: translateY(-3px);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .grid-layout {
-  display: grid;
-  grid-template-columns: 2fr 1.5fr;
-  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
   align-items: stretch;
 }
 
-/* STACKED RIGHT SECTIONS */
-.side-stack {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-/* SPECIAL HEIGHT FOR VISUAL BALANCE */
-.about {
-  height: 100%;
-}
-
-.connect,
-.mission {
-  flex: 1;
-}
 
 /* ANIMATION */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.fade-enter-active {
+  transition: all 0.6s ease;
+}
+.fade-enter-from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.fade-enter-to {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* RESPONSIVE */
