@@ -83,6 +83,7 @@
   font-family: 'Inter', sans-serif;
   background: var(--main-background-dark);
   padding: 4rem 5%;
+  overflow-x: hidden;
 }
 
 .education-header {

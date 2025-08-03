@@ -41,7 +41,7 @@ export default defineComponent({
       const visibleProjects = ref([]);
       const delay = 900; 
 
-      onMounted(() =>{
+      onMounted(() => {
         visibleHeader.value = true;
         allProjects.forEach((project, index) => {
           setTimeout(() => {
@@ -66,6 +66,7 @@ export default defineComponent({
   background: var(--main-background-dark);
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 .projects-header {
