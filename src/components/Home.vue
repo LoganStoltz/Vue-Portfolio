@@ -77,6 +77,7 @@ export default defineComponent({
 .home {
   font-family: 'Inter', sans-serif;
   background: var(--main-background-dark);
+  overflow-x: hidden;
 }
 
 /* HERO SECTION */

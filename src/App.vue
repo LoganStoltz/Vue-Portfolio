@@ -35,6 +35,7 @@ export default defineComponent({
   --background-light: #f7f9fc;
   --background-blue: #1e3a5f;
   --background-header: #1e425f;
+  --dropdown-nav: #1a3b53;
 
   /* Colors - Text */
   --text-primary: #f4f4f4;
