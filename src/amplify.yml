@@ -6,7 +6,7 @@ frontend:
         - nvm install 20.19.0
         - nvm use 20.19.0
         - corepack enable
-        - npm install
+        - npm ci
     build:
       commands:
         - npm run build
