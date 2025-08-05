@@ -19,7 +19,6 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
-    "@jsconfig/node22": "^22.0.2",
     "@types/node": "^22.15.32",
     "@vitejs/plugin-vue": "^6.0.0",
     "@vitejs/plugin-vue-jsx": "^5.0.0",
