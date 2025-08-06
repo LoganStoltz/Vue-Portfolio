@@ -20,9 +20,11 @@
           <h4>{{ project.tools }}</h4>
           <h4>{{ project.languages }}</h4>
           <p> {{ project.description }}</p>
-          <a :href="project.githubLink" class="github-link" target="_blank" rel="noopener">View on Github</a>
-          <div v-if="project.projectLink">
-            <a :href="project.projectLink" class="project-link" target="_blank" rel="noopener">View Project</a>
+          <div class="project-links">
+            <a :href="project.githubLink" class="github-link" target="_blank" rel="noopener">View on Github</a>
+            <div v-if="project.projectLink">
+              <a :href="project.projectLink" class="project-link" target="_blank" rel="noopener">View Project</a>
+            </div>
           </div>
         </div>
       </div>
@@ -153,17 +155,32 @@ export default defineComponent({
   margin-top: 1rem;
 }
 
-/* Alternating layout */
-.project-card {
-  flex-direction: row;
+.project-links {
+  display: flex;
+  align-content: stretch;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  width: 100%;
 }
 
-.project-card.reverse {
-  flex-direction: row-reverse;
+.project-links a {
+  display: flex;
+  background-color: var(--background-blue);
+  color: var(--text-primary);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
 }
 
-.project-card.reverse .project-content {
-  text-align: right;
+.project-links a:hover {
+  background-color: var(--accent-yellow);
+  color: var(--background-header);
 }
 
 /* ANIMATION */
