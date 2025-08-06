@@ -45,7 +45,7 @@ export default defineComponent({
   setup() {
     const isVisible = ref(false);
     const mobileNav = ref(false);
-    const mobile = ref(window.innerWidth <= 768);
+    const mobile = ref(window.innerWidth <= 1225);
 
     const toggleMobileNav = () => {
       mobileNav.value = !mobileNav.value;
@@ -56,7 +56,7 @@ export default defineComponent({
     };
 
     const handleResize = () => {
-      mobile.value = window.innerWidth <= 768;
+      mobile.value = window.innerWidth <= 1225;
       if (!mobile.value) mobileNav.value = false; // Close if resizing to desktop
     };
 
@@ -198,7 +198,7 @@ export default defineComponent({
 }
 
 /* RESPONSIVE DESIGN */
-@media (max-width: 768px) {
+@media (max-width: 1225px) {
   .nav {
     display: none;
   }

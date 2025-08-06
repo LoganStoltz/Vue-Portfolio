@@ -164,9 +164,19 @@ export default defineComponent({
 }
 
 /* RESPONSIVE */
+@media (max-width: 1030px) {
+  .name {
+    font-size: 6rem;
+  }
+
+  .hero p {
+    font-size: 1.35rem;
+  }
+}
+
 @media (max-width: 768px) {
   .name {
-    font-size: 3rem;
+    font-size: 4rem;
   }
 
   .tagline {

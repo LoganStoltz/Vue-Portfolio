@@ -4,7 +4,7 @@
       <div class="projects-header" v-if="visibleHeader">
         <h1>My Projects</h1>
         <p>
-          A showcase of work that combines thoughtful design and practical development. (PLACEHOLDER)
+          Here is a collection of my projects that I have worked on. Each project showcases my skills in web development, programming, and problem-solving. Feel free to explore the details of each project and see the technologies I used.
         </p>
       </div>
     </transition>
@@ -17,6 +17,8 @@
       >
         <div class="project-content">
           <h2>{{ project.title }}</h2>
+          <h4>{{ project.tools }}</h4>
+          <h4>{{ project.languages }}</h4>
           <p> {{ project.description }}</p>
           <a :href="project.githubLink" class="github-link" target="_blank" rel="noopener">View on Github</a>
           <div v-if="project.projectLink">
@@ -35,14 +37,16 @@ export default defineComponent({
   name: 'Projects',
   setup() {
       const allProjects = [
-        { id: 1, title: 'Project 1', githubLink: 'https://github.com/LoganStoltz/Vue-Portfolio', projectLink: 'https://example.com/project1', description: 'An elegant solution to XYZ problem. (PLACEHOLDER)' },
-        { id: 2, title: 'Project 2', githubLink: 'https://github.com/LoganStoltz/CYK-Parser', description: 'Built with Vue and Tailwind, this project showcases responsiveness and state management. (PLACEHOLDER)' },
-        { id: 3, title: 'Project 3', githubLink: 'https://github.com/LoganStoltz/LL-1-Parser', description: 'A data visualization dashboard featuring D3.js and REST APIs. (PLACEHOLDER)' }
+        { id: 1, title: 'Data Structure Visualizer', tools: 'Visual Studio Code, Firebase, Github', languages: 'HTML, Javascript, CSS', githubLink: 'https://github.com/Evebarr20/data-structure-visualizer', projectLink: 'https://datastructurevisualizer.netlify.app/stack', description: 'I worked with a team to develop an online data structure visualizer aimed at helping students understand key concepts like Stacks, Doubly Linked Lists, Binary Search Trees, and Max-Heaps. My contribution focused on building the Stack page, where I created an interactive control panel allowing users to push, pop, peek, and clear elements in a stack, with real-time visual updates and an adjustable animation speed. I also implemented educational sections that showcased stack implementations in Python, C, and Java, along with a detailed breakdown of time complexities and common use cases. This project was shaped by feedback from our professors at Eastern Washington University, who guided us toward addressing the areas students struggle with the most.' },
+        { id: 2, title: 'CYK Parser', tools: 'Visual Studio Code, Firebase, Github', languages: 'HTML, Javascript, CSS', githubLink: 'https://github.com/LoganStoltz/CYK-Parser', description: 'This program uses the Cocke–Younger–Kasami (CYK) algorithm to process a text input containing Context-Free Grammars (CFGs) and evaluates strings to determine whether they belong to the languages defined by the corresponding CFGs. It can parse grammars, construct parse trees, and apply language membership tests based on CYK parsing algorithms. The program has a time complexity of O(n^3 · |G|), where n is the length of the input string and |G| is the size of the grammar.' },
+        { id: 3, title: 'LL(1) Parser', tools: 'Visual Studio Code, Firebase, Github', languages: 'HTML, Javascript, CSS', githubLink: 'https://github.com/LoganStoltz/LL-1-Parser', description: 'This program uses the LL(1) algorithm to process text input containing context-free grammars (CFGs) and evaluates strings to determine whether they belong to the languages defined by the corresponding CFGs. It can compute the FIRST and FOLLOWS for each non-terminal, constructing an LL(1) Parse Table from them to compute whether the grammar is in LL(1), and then applying language membership tests based on the LL(1) parsing algorithm.' },
+        { id: 4, title: 'Vue Portfolio', tools: 'Visual Studio Code, Firebase, Github', languages: 'HTML, Javascript, CSS', githubLink: 'https://github.com/LoganStoltz/Vue-Portfolio', projectLink: 'https://loganstoltz.com', description: 'This Portfolio' }//,
+        //{ id: 5, title: 'Example', tools: 'Visual Studio Code, Firebase, Github', languages: 'HTML, Javascript, CSS', githubLink: 'https://example.com/Github', projectLink: 'https://example.com/project1', description: '(PLACEHOLDER)' }
       ];
 
       const visibleHeader = ref(false);
       const visibleProjects = ref([]);
-      const delay = 900; 
+      const delay = 600; 
 
       onMounted(() => {
         visibleHeader.value = true;
@@ -73,7 +77,7 @@ export default defineComponent({
 }
 
 .projects-header {
-  max-width: 1000px;
+  max-width: 75vw;
   margin: 0 auto;
   padding: 4rem 5% 2rem;
   text-align: center;
@@ -97,7 +101,7 @@ export default defineComponent({
 
 .projects-section {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
   padding: 1rem 1rem;
   background: rgba(0, 0, 0, 0.192);
   border-radius: 16px;
@@ -107,7 +111,6 @@ export default defineComponent({
 .project-card {
   min-height: 50vh;
   background: var(--background-light);
-  text-align: center;
   align-items: center;
   justify-content: center;
   padding: 2rem;
@@ -129,16 +132,25 @@ export default defineComponent({
 }
 
 .project-content h2 {
+  text-align: center;
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--accent-blue);
-  margin-bottom: 1rem;
+  margin-bottom: 0.1rem;
+}
+
+.project-content h4 {
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark-on-light);
 }
 
 .project-content p {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   line-height: 1.7;
   color: var(--text-dark-on-light);
+  margin-top: 1rem;
 }
 
 /* Alternating layout */
@@ -168,7 +180,18 @@ export default defineComponent({
 }
 
 /* Responsive */
+@media (max-width: 1130px) {
+  .projects-section {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (max-width: 768px) {
+  .projects-section {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    margin: 0;
+  }
   .projects-header h1 {
     font-size: 2rem;
   }
@@ -180,7 +203,7 @@ export default defineComponent({
   .project-card {
     flex-direction: column !important;
     min-height: 100vh;
-    padding: 2rem;
+    padding: 1rem;
     justify-content: flex-start;
   }
 

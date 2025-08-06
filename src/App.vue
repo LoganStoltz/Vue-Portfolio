@@ -51,8 +51,8 @@ export default defineComponent({
   --heading-gradient: linear-gradient(90deg, #74ebd5, #ACB6E5);
 
   /* Shadows */
-  --box-shadow-default: 0 12px 36px rgba(0, 0, 0, 0.08);
-  --box-shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.12);
+  --box-shadow-default: 0 12px 36px rgba(0, 0, 0, 0.25);
+  --box-shadow-hover: 0 16px 40px rgba(0, 0, 0, 0.5);
 
   /* Border radius */
   --radius-large: 16px;
