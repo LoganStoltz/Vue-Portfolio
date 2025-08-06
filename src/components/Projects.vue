@@ -12,13 +12,16 @@
     <transition-group name="fade" tag="div" class="projects-section">
       <div
         class="project-card"
-        v-for="(project, index) in visibleProjects"
+        v-for="project in visibleProjects"
         :key="project.id"
-        :class="{ 'reverse': index % 2 !== 0 }"
-      > <!--(project, index), The index is used to alternate which side the project displays on -->
+      >
         <div class="project-content">
           <h2>{{ project.title }}</h2>
           <p> {{ project.description }}</p>
+          <a :href="project.githubLink" class="github-link" target="_blank" rel="noopener">View on Github</a>
+          <div v-if="project.projectLink">
+            <a :href="project.projectLink" class="project-link" target="_blank" rel="noopener">View Project</a>
+          </div>
         </div>
       </div>
     </transition-group>
@@ -32,9 +35,9 @@ export default defineComponent({
   name: 'Projects',
   setup() {
       const allProjects = [
-        { id: 1, title: 'Project 1', description: 'An elegant solution to XYZ problem. (PLACEHOLDER)' },
-        { id: 2, title: 'Project 2', description: 'Built with Vue and Tailwind, this project showcases responsiveness and state management. (PLACEHOLDER)' },
-        { id: 3, title: 'Project 3', description: 'A data visualization dashboard featuring D3.js and REST APIs. (PLACEHOLDER)' }
+        { id: 1, title: 'Project 1', githubLink: 'https://github.com/LoganStoltz/Vue-Portfolio', projectLink: 'https://example.com/project1', description: 'An elegant solution to XYZ problem. (PLACEHOLDER)' },
+        { id: 2, title: 'Project 2', githubLink: 'https://github.com/LoganStoltz/CYK-Parser', description: 'Built with Vue and Tailwind, this project showcases responsiveness and state management. (PLACEHOLDER)' },
+        { id: 3, title: 'Project 3', githubLink: 'https://github.com/LoganStoltz/LL-1-Parser', description: 'A data visualization dashboard featuring D3.js and REST APIs. (PLACEHOLDER)' }
       ];
 
       const visibleHeader = ref(false);
@@ -93,21 +96,30 @@ export default defineComponent({
 }
 
 .projects-section {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(600px, 1fr));
+  padding: 1rem 1rem;
+  background: rgba(0, 0, 0, 0.192);
+  border-radius: 16px;
+  margin: 0rem 5rem;
 }
 
 .project-card {
-  min-height: 85vh;
+  min-height: 50vh;
   background: var(--background-light);
-  display: flex;
+  text-align: center;
   align-items: center;
   justify-content: center;
-  padding: 4rem 5%;
+  padding: 2rem;
+  margin: 1rem;
   box-sizing: border-box;
-  width: 100%;
   box-shadow: var(--box-shadow-default);
+  border-radius: 16px;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
 }
 
 /* Content wrapper */
