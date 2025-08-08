@@ -22,7 +22,7 @@
       </transition-group>
 
       <div class="contact-image">
-        <img src="../assets/contact-page-image.png" alt="Logan Stoltz" />
+        <!--<img src="@\assets\contact-page-image.png" alt="Logan Stoltz" />-->
       </div>
     </div>
   </section>
