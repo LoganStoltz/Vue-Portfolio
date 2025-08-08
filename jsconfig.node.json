@@ -1,5 +1,5 @@
 {
-  // "extends": "./jsconfig.base.json",
+  "extends": "@jsconfig/node22/jsconfig.json",
   "include": [
     "vite.config.*",
     "vitest.config.*",
@@ -10,7 +10,7 @@
   ],
   "compilerOptions": {
     "noEmit": true,
-    "tsBuildInfoFile": "./node_modules/.tmp/jsconfig.node.jsbuildinfo",
+    "jsBuildInfoFile": "./node_modules/.tmp/jsconfig.node.jsbuildinfo",
 
     "module": "ESNext",
     "moduleResolution": "Bundler",

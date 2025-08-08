@@ -159,7 +159,6 @@ export default defineComponent({
   display: flex;
   align-content: stretch;
   justify-content: center;
-  margin-top: auto; /* Push to bottom */
   gap: 1rem;
   margin-top: 1.5rem;
   width: 100%;
