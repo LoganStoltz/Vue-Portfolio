@@ -3,9 +3,8 @@ frontend:
   phases:
     preBuild:
       commands:
-        - nvm install 22.12.0
-        - nvm use 22.12.0
-        - corepack enable
+        - nvm install 20.14.0
+        - nvm use 20.14.0
         - npm ci
     build:
       commands:
@@ -17,19 +16,3 @@ frontend:
   cache:
     paths:
       - node_modules/**/*
-      - .nuxt/**/*
-      - .nuxt/**/node_modules/**/*
-      - .nuxt/dist/client/**/*
-      - .nuxt/dist/server/**/*
-      - .nuxt/dist/server/node_modules/**/*
-      - .nuxt/dist/server/middleware/**/*
-      - .nuxt/dist/server/routes/**/*
-      - .nuxt/dist/server/shared/**/*
-      - .nuxt/dist/server/utils/**/*
-      - .nuxt/dist/server/components/**/*
-      - .nuxt/dist/server/layouts/**/*
-      - .nuxt/dist/server/plugins/**/*
-      - .nuxt/dist/server/templates/**/*
-      - .nuxt/dist/server/assets/**/*
-      - .nuxt/dist/server/app.js
-  
