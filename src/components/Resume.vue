@@ -1,20 +1,18 @@
 <template>
   <div class="pdf-viewer">
     <iframe
-      :src="pdfUrl"
+      src="/LoganStoltzPortfolio.pdf"
       style="border: none"
     ></iframe>
   </div>
 </template>
 
 <script>
-import pdfFile from '../assets/LoganStoltzPortfolio.pdf';
 
 export default {
-  data() {
-    return {
-      pdfUrl: pdfFile
-    };
+  name: 'Resume',
+  setup() {
+    // No reactive state or methods needed for this component
   }
 };
 </script>

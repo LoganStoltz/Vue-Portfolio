@@ -15,7 +15,7 @@
     <!-- Hamburger Icon (Mobile Only) -->
   <div v-if="mobile">
     <img
-      src="../assets/hamburgerIcon.svg"
+      :src="hamburgerIcon"
       alt="Menu"
       class="hamburger-icon"
       :class="{ 'icon-active': mobileNav }"
@@ -39,6 +39,7 @@
 
 <script lang="js">
 import { defineComponent, ref, onMounted, onUnmounted } from 'vue';
+import hamburgerIcon from '@/assets/hamburgerIcon.svg'
 
 export default defineComponent({
   name: 'Header',
@@ -77,6 +78,7 @@ export default defineComponent({
       mobileNav,
       toggleMobileNav,
       closeMobileNav,
+      hamburgerIcon
     };
   }
 });
