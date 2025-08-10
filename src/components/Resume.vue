@@ -1,7 +1,7 @@
 <template>
   <div class="pdf-viewer">
     <iframe
-      :src="pdfUrl"
+      :src="pdfFile"
       style="border: none"
     ></iframe>
   </div>
@@ -13,7 +13,7 @@ import pdfFile from '/src/assets/LoganStoltzPortfolio.pdf?url';
 export default {
   data() {
     return {
-      pdfUrl: pdfFile
+      pdfFile
     };
   }
 };
