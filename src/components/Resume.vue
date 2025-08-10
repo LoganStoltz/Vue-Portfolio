@@ -1,18 +1,19 @@
 <template>
   <div class="pdf-viewer">
     <iframe
-      src="https://mozilla.github.io/pdf.js/web/viewer.html?file=/LoganStoltzPortfolio.pdf"
-      width="100%"
-      height="1122px"
-      style="border:none;"
+      :src="pdfFile"
+      style="border: none"
     ></iframe>
-
   </div>
 </template>
 
 <script>
 export default {
-  name: 'PdfViewer'
+  data() {
+    return {
+      pdfFile: '/LoganStoltzPortfolio.pdf'
+    };
+  }
 };
 </script>
 
