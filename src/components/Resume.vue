@@ -2,19 +2,22 @@
   <div class="pdf-viewer">
     <iframe
       src="/LoganStoltzPortfolio.pdf"
+      title="Logan Stoltz Portfolio"
       style="border: none"
     ></iframe>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  name: 'PdfViewer'
+};
 </script>
 
 <style scoped>
 .pdf-viewer {
   background: var(--main-background-dark);
-  padding: 0rem;
+  padding: 0;
   display: flex;
   justify-content: center;
 }
