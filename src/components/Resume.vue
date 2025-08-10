@@ -11,7 +11,7 @@
 export default {
   data() {
     return {
-      pdfFile: '/LoganStoltzPortfolio.pdf'
+      pdfFile: '/LoganStoltzPortfolio.pdf?url'
     };
   }
 };
