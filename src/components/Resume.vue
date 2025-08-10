@@ -1,10 +1,12 @@
 <template>
   <div class="pdf-viewer">
     <iframe
-      src="/LoganStoltzPortfolio.pdf"
-      title="Logan Stoltz Portfolio"
-      style="border: none"
+      src="https://mozilla.github.io/pdf.js/web/viewer.html?file=/LoganStoltzPortfolio.pdf"
+      width="100%"
+      height="1122px"
+      style="border:none;"
     ></iframe>
+
   </div>
 </template>
 
