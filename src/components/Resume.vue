@@ -1,23 +1,13 @@
 <template>
   <div class="pdf-viewer">
     <iframe
-      :src="pdfFile"
-      style="border: none"
+      src="/LoganStoltzPortfolio.pdf"
+      frameborder="0"
     ></iframe>
   </div>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      pdfFile: '/LoganStoltzPortfolio.pdf?url'
-    };
-  }
-};
-</script>
-
-<style scoped>
+<style>
 .pdf-viewer {
   background: var(--main-background-dark);
   padding: 0;
