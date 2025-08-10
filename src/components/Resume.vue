@@ -1,22 +1,14 @@
 <template>
   <div class="pdf-viewer">
     <iframe
-      :src="pdfFile"
+      src="/LoganStoltzPortfolio.pdf"
       style="border: none"
     ></iframe>
   </div>
 </template>
 
 <script>
-import pdfFile from '/src/assets/LoganStoltzPortfolio.pdf?url';
-
-export default {
-  data() {
-    return {
-      pdfFile
-    };
-  }
-};
+export default {};
 </script>
 
 <style scoped>
