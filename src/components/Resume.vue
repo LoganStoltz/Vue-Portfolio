@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import pdfFile from '/src/assets/LoganStoltzPortfolio.pdf';
+import pdfFile from '/src/assets/LoganStoltzPortfolio.pdf?url';
 
 export default {
   data() {

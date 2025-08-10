@@ -39,7 +39,7 @@
 
 <script lang="js">
 import { defineComponent, ref, onMounted, onUnmounted } from 'vue';
-import hamburgerIcon from '@/assets/hamburgerIcon.svg'
+import hamburgerIcon from '@/assets/hamburgerIcon.svg?url'
 
 export default defineComponent({
   name: 'Header',
