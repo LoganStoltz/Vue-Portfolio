@@ -112,6 +112,9 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
   gap: 2rem;
+  background: rgba(0, 0, 0, 0.192);
+  border-radius: 16px;
+  padding: 2rem;
 }
 
 /* COURSE CARD */

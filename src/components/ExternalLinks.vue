@@ -113,7 +113,9 @@ export default defineComponent({
   flex-direction: column;
   flex-wrap: wrap;
   gap: 1.2rem;
-  margin-top: 1rem;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.192);
+  border-radius: 16px;
 }
 
 .contact-links a {
