@@ -114,14 +114,17 @@ export default defineComponent({
 
 /* MAIN CONTENT BELOW HERO */
 .content {
-  width: 100%;
-  padding: 4rem 5%;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.192);
+  border-radius: 16px;
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
 
 /* SECTION BOX */
 .section {
   background: var(--background-light);
-  padding: 3rem 3rem;
+  padding: 2rem 3rem;
   border-radius: 16px;
   box-shadow: var(--box-shadow-default);
   margin-bottom: 4rem;
