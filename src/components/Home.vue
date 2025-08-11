@@ -136,7 +136,7 @@ export default defineComponent({
 
 .section p {
   font-size: 1.5rem;
-  color: #000000;
+  color: var(--text-dark-on-light);
   line-height: 2;
   padding-top: 1rem;
   padding-bottom: 1rem;

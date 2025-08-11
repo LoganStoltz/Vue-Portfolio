@@ -21,7 +21,7 @@
           :href="conlink.link"
         >
           <h3>{{ conlink.name }}</h3>
-          <component :is="conlink.icon" width="50" height="50" />
+          <component :is="conlink.icon" class="contact-icon" width="50" height="50" />
         </a>
       </transition-group>
     </div>
@@ -135,6 +135,10 @@ export default defineComponent({
 .contact-link:hover {
   background-color: var(--accent-yellow);
   transform: translateY(-3px);
+}
+
+.contact-icon {
+    filter: brightness(0) invert(1);
 }
 
 .contact-link h3 {

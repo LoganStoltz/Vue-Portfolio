@@ -32,23 +32,23 @@ export default defineComponent({
 
   /* Colors - Backgrounds */
   --main-background-dark: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  --background-light: #f7f9fc;
-  --background-blue: #1e3a5f;
+  --background-light: linear-gradient(to right, #5a7480, #384c6b);
+  --background-blue: #6f8bbe77;
   --background-header: #1e425f;
   --dropdown-nav: #1a3b53;
 
   /* Colors - Text */
   --text-primary: #f4f4f4;
   --text-secondary: #d0d8e4;
-  --text-dark: #1c2b38;
-  --text-dark-on-light: #252525;
-  --text-muted: #6b7a8f;
+  --text-dark: #e3caff;
+  --text-dark-on-light: #ccd8e2;
+  --text-muted: #c7c7c7;
   --text-black: #000000;
 
   /* Colors - Accent & Brand */
-  --accent-blue: #1a73e8;
+  --accent-blue: hsl(146, 100%, 93%);
   --accent-yellow: #ffd166;
-  --heading-gradient: linear-gradient(90deg, #74ebd5, #ACB6E5);
+  --heading-gradient: linear-gradient(to right, #74ebd5, #e3caff);
 
   /* Shadows */
   --box-shadow-default: 0 12px 36px rgba(0, 0, 0, 0.25);

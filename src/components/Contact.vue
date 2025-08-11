@@ -131,6 +131,8 @@ textarea {
   border: 2px solid #ccc;
   font-family: 'Inter', sans-serif;
   resize: none;
+  background: var(--box-shadow-default);
+  color: white;
 }
 
 input:focus,
@@ -154,7 +156,7 @@ textarea:focus {
 
 .submit-button:hover {
   background-color: var(--accent-yellow);
-  color: var(--background-blue);
+  color: var(--background-header);
 }
 
 /* Responsive */
