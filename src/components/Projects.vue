@@ -21,10 +21,23 @@
           <h4>{{ project.languages }}</h4>
           <p> {{ project.description }}</p>
           <div class="project-links">
-            <a :href="project.githubLink" class="github-link" target="_blank" rel="noopener">View on Github</a>
-            <div v-if="project.projectLink">
-              <a :href="project.projectLink" class="project-link" target="_blank" rel="noopener">View Project</a>
-            </div>
+            <a 
+              :href="project.githubLink" 
+              class="github-link" 
+              target="_blank" 
+              rel="noopener"
+              >
+                View on Github
+            </a>
+            <a 
+              v-if="project.projectLink"
+              :href="project.projectLink" 
+              class="project-link" 
+              target="_blank" 
+              rel="noopener"
+              >
+                View Project
+              </a>
           </div>
         </div>
       </div>
@@ -113,8 +126,8 @@ export default defineComponent({
 .project-card {
   min-height: 50vh;
   background: var(--background-light);
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  flex-direction: column; 
   padding: 2rem;
   margin: 1rem;
   box-sizing: border-box;
@@ -129,8 +142,9 @@ export default defineComponent({
 
 /* Content wrapper */
 .project-content {
-  max-width: 800px;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .project-content h2 {
@@ -153,22 +167,24 @@ export default defineComponent({
   line-height: 1.7;
   color: var(--text-dark-on-light);
   margin-top: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .project-links {
   display: flex;
-  align-content: stretch;
-  justify-content: center;
+  margin-top: auto;
   gap: 1rem;
-  margin-top: 1.5rem;
   width: 100%;
 }
 
 .project-links a {
+  flex: 1;
   display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--background-blue);
   color: var(--text-primary);
-  padding: 1rem 2rem;
+  padding: 1rem;
   border: none;
   border-radius: 10px;
   font-size: 1.1rem;
