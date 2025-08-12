@@ -107,9 +107,8 @@ export default defineComponent({
   font-size: 2rem;
   color: var(--text-muted);
   font-weight: 500;
-  max-width: 90%;
-  line-height: 1.7;
-  margin: 0 auto;
+  line-height: 1.5;
+  margin: 5px auto;
 }
 
 /* MAIN CONTENT BELOW HERO */
@@ -178,12 +177,17 @@ export default defineComponent({
 
   .hero p {
     font-size: 1.35rem;
+    text-align: center;
   }
 }
 
 @media (max-width: 768px) {
   .name {
-    font-size: 4rem;
+    font-size: 3.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
   }
 
   .tagline {
