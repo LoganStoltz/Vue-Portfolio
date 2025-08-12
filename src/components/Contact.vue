@@ -76,13 +76,12 @@ export default defineComponent({
 .contact-main-section {
   font-family: 'Inter', sans-serif;
   background: var(--main-background-dark);
-  min-height: 100vh;
   overflow-x: hidden;
 }
 
 .contact-header {
   text-align: center;
-  margin: 4rem 2rem;
+  margin: 6rem 2rem;
 }
 
 .contact-header h1 {

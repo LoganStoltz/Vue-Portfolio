@@ -1,6 +1,7 @@
 <template>
   <footer class="footer">
-    <p>Website created by Logan Stoltz using Vue, hosted using AWS Amplify</p>
+    <p>Website created by Logan Stoltz using Vue</p>
+    <p>Hosted using AWS Amplify</p>
   </footer>
 </template>
 
@@ -26,8 +27,8 @@
 p {
     color: var(--text-primary);
     font-size: x-large;
-    font-weight: bold;
-    line-height: 1.7;
+    font-weight: 600;
+    line-height: 1.5;
 }
 
 @media (max-width: 930px) {
@@ -36,11 +37,11 @@ p {
   }
   
   p {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }
 
-@media (max-width: 668px) {
+@media (max-width: 499px) {
   .footer {
     padding: 0rem;
   }
