@@ -201,4 +201,10 @@ export default defineComponent({
     font-weight: 600;
   }
 }
+
+@media (max-width: 499px) {
+  .contact-link h3 {
+    font-size: 1.15rem;
+  }
+}
 </style>
