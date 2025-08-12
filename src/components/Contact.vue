@@ -165,7 +165,7 @@ textarea:focus {
   }
 
   .contact-header h1 {
-    font-size: 2rem;
+    font-size: 2.75rem;
   }
 
   .contact-header p {
@@ -173,8 +173,8 @@ textarea:focus {
   }
 
   .contact-form {
-    padding: 2rem;
-    margin: 2rem;
+    padding: 1rem;
+    margin: 1rem;
   }
 
   .submit-button {

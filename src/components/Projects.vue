@@ -149,7 +149,6 @@ export default defineComponent({
 }
 
 .project-content h4 {
-  text-align: center;
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--text-dark-on-light);
@@ -161,6 +160,7 @@ export default defineComponent({
   color: var(--text-dark-on-light);
   margin-top: 1rem;
   margin-bottom: 1.5rem;
+  text-align: left;
 }
 
 .project-links {
@@ -221,7 +221,7 @@ export default defineComponent({
     overflow-y: hidden;
   }
   .projects-header h1 {
-    font-size: 2rem;
+    font-size: 2.75rem;
   }
 
   .projects-header p {
@@ -244,8 +244,12 @@ export default defineComponent({
     font-size: 2rem;
   }
 
-  .project-content p {
+  .project-content h4 {
     font-size: 1rem;
+  }
+
+  .project-content p {
+    font-size: 0.85rem;
   }
 }
 </style>

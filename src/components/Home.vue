@@ -194,6 +194,7 @@ export default defineComponent({
     gap: 4rem;
     margin: 0;
     padding: 1rem;
+    overflow-y: hidden;
   }
 
   .section {
@@ -205,7 +206,7 @@ export default defineComponent({
   }
 
   .section p {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .link-button {

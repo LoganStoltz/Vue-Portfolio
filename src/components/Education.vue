@@ -169,7 +169,7 @@
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .education-header h1 {
-    font-size: 2rem;
+    font-size: 2.75rem;
   }
 
   .education-header p {
@@ -202,7 +202,7 @@
   }
 
   .class-card p {
-    font-size: 0.95rem;
+    font-size: 0.84rem;
   }
 }
 </style>
