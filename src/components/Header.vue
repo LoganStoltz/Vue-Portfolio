@@ -154,6 +154,7 @@ export default defineComponent({
   flex-direction: column;
   box-shadow: -2px 2 10px rgba(0, 0, 0, 0.2);
   z-index: 999;
+  border-bottom-left-radius: var(--radius-large);
 }
 
 .dropdown-nav a {
@@ -168,6 +169,10 @@ export default defineComponent({
 .dropdown-nav a:hover {
   color: #ffd166;
   background: var(--background-header);
+}
+
+.dropdown-nav a:last-child {
+  border-bottom-left-radius: var(--radius-large);
 }
 
 /* SLIDE-IN ANIMATION (DESKTOP NAV) */
@@ -209,10 +214,6 @@ export default defineComponent({
     justify-content: flex-start;
     padding: 0 1rem;
   }
-
-  .dropdown-nav a:last-child {
-    border-bottom-left-radius: var(--radius-large);
-  }
 }
 
 @media (max-width: 768px) {
@@ -220,7 +221,6 @@ export default defineComponent({
     width: 55%;
     max-width: 300px;
     z-index: 999;
-    border-bottom-left-radius: var(--radius-large);
   }
 
   .dropdown-nav a {

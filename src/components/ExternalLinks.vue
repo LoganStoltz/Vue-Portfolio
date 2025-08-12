@@ -72,7 +72,7 @@ export default defineComponent({
 .contact-main-section {
   font-family: 'Inter', sans-serif;
   background: var(--main-background-dark);
-  overflow-y: hidden;
+  overflow: hidden;
 }
 
 .contact-header {

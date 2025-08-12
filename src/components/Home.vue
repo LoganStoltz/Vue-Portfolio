@@ -100,7 +100,7 @@ export default defineComponent({
   margin-bottom: 2rem;
   line-height: 1.2;
   margin: 0 auto;
-  margin-top: -10rem;
+  margin-top: -5rem;
 }
 
 .tagline {
