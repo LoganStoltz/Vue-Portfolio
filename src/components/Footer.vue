@@ -39,4 +39,14 @@ p {
     font-size: small;
   }
 }
+
+@media (max-width: 668px) {
+  .footer {
+    padding: 0rem;
+  }
+  
+  p {
+    font-size: smaller;
+  }
+}
 </style>

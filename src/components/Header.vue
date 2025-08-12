@@ -209,5 +209,24 @@ export default defineComponent({
     justify-content: flex-start;
     padding: 0 1rem;
   }
+
+  .dropdown-nav a:last-child {
+    border-bottom-left-radius: var(--radius-large);
+  }
+}
+
+@media (max-width: 768px) {
+  .dropdown-nav {
+    width: 45%;
+    max-width: 300px;
+    z-index: 999;
+    border-bottom-left-radius: var(--radius-large);
+  }
+
+  .dropdown-nav a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 1.5rem 2rem;
+  }
 }
 </style>

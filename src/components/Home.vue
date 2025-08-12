@@ -119,6 +119,10 @@ export default defineComponent({
   border-radius: 16px;
   margin-left: 5rem;
   margin-right: 5rem;
+  gap: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* SECTION BOX */
@@ -127,7 +131,6 @@ export default defineComponent({
   padding: 2rem 3rem;
   border-radius: 16px;
   box-shadow: var(--box-shadow-default);
-  margin-bottom: 4rem;
 }
 
 .section h2 {
@@ -166,6 +169,7 @@ export default defineComponent({
   transform: translateY(0);
 }
 
+
 /* RESPONSIVE */
 @media (max-width: 1030px) {
   .name {
@@ -186,6 +190,11 @@ export default defineComponent({
     font-size: 1.5rem;
   }
 
+  .content {
+    margin: 0;
+    padding: 2rem;
+  }
+
   .section {
     padding: 2rem;
   }
@@ -203,7 +212,7 @@ export default defineComponent({
     padding: 0.8rem 1.2rem;
   }
 
-    .grid-layout {
+  .grid-layout {
     display: flex;
     flex-direction: column;
   }

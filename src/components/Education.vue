@@ -88,7 +88,7 @@
 
 .education-header {
   max-width: 900px;
-  margin: 0 auto 3rem;
+  margin: 6rem 2rem;
   text-align: center;
 }
 
@@ -174,6 +174,10 @@
 
   .education-header p {
     font-size: 1.1rem;
+  }
+
+  .education-main-section {
+    padding: 0rem;
   }
 
   .class-card {

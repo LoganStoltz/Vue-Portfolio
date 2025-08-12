@@ -86,15 +86,11 @@ export default defineComponent({
 .projects-main-section {
   font-family: 'Inter', sans-serif;
   background: var(--main-background-dark);
-  margin: 0;
-  padding: 0;
   overflow-x: hidden;
 }
 
 .projects-header {
-  max-width: 75vw;
-  margin: 0 auto;
-  padding: 4rem 5% 2rem;
+  margin: 6rem 2rem;
   text-align: center;
 }
 
@@ -111,16 +107,13 @@ export default defineComponent({
   font-size: 1.65rem;
   color: var(--text-muted);
   line-height: 1.7;
-  padding-bottom: 4rem;
 }
 
 .projects-section {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
-  padding: 1rem 1rem;
   background: rgba(0, 0, 0, 0.192);
   border-radius: 16px;
-  margin: 0rem 5rem;
 }
 
 .project-card {

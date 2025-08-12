@@ -72,14 +72,13 @@ export default defineComponent({
 .contact-main-section {
   font-family: 'Inter', sans-serif;
   background: var(--main-background-dark);
-  padding: 4rem 5%;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
 .contact-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 6rem 2rem;
 }
 
 .contact-header h1 {
@@ -177,8 +176,17 @@ export default defineComponent({
 
 /* Responsive */
 @media (max-width: 768px) {
+  .contact-main-section {
+    padding: 0rem;
+    padding-top: 3rem;
+  }
+  
   .contact-section {
     flex-direction: column;
+  }
+
+  .contact-image {
+    padding: 2rem;
   }
 
   .contact-header h1 {
@@ -187,6 +195,11 @@ export default defineComponent({
 
   .contact-header p {
     font-size: 1.1rem;
+  }
+
+  .contact-link h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
   }
 }
 </style>

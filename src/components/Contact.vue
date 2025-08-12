@@ -76,14 +76,13 @@ export default defineComponent({
 .contact-main-section {
   font-family: 'Inter', sans-serif;
   background: var(--main-background-dark);
-  padding: 4rem 5%;
   min-height: 100vh;
   overflow-x: hidden;
 }
 
 .contact-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 6rem 2rem;
 }
 
 .contact-header h1 {
@@ -175,6 +174,7 @@ textarea:focus {
 
   .contact-form {
     padding: 2rem;
+    margin: 2rem;
   }
 
   .submit-button {
