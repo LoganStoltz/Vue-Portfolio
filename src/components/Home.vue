@@ -183,7 +183,7 @@ export default defineComponent({
 
 @media (max-width: 768px) {
   .name {
-    font-size: 3.5rem;
+    font-size: 4rem;
   }
 
   .hero p {
@@ -231,6 +231,15 @@ export default defineComponent({
   .connect,
   .mission {
     width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .name {
+    font-size: 3rem;
+  }
+  .tagline {
+    font-size: 1rem;
   }
 }
 </style>
