@@ -46,7 +46,7 @@ p {
   }
   
   p {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
   }
 }
 </style>

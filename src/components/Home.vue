@@ -234,12 +234,13 @@ export default defineComponent({
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 499px) {
   .name {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
-  .tagline {
-    font-size: 1rem;
+
+  .hero p {
+    font-size: 0.9rem;
   }
 }
 </style>
