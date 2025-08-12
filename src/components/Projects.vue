@@ -153,7 +153,8 @@ export default defineComponent({
 .project-content h4 {
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--text-dark-on-light);
+  color: var(--text-dark);
+  text-align: center;
 }
 
 .project-content p {
@@ -252,6 +253,11 @@ export default defineComponent({
 
   .project-content p {
     font-size: 0.85rem;
+  }
+
+    .project-links a {
+    font-size: 0.8rem;
+    font-weight: 400;
   }
 }
 </style>

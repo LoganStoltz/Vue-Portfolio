@@ -6,6 +6,11 @@
   padding-top: 3rem;
   font-weight: normal;
   background-color: aqua;
-  
+}
+
+@media (max-width: 499px) {
+  #app {
+    padding-top: 0;
+  }
 }
 

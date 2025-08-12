@@ -229,4 +229,13 @@ export default defineComponent({
     padding: 1.2rem 1.75rem;
   }
 }
+
+@media (max-width: 499px) {
+  .header {
+    height: 3.5rem;
+  }
+  .dropdown-nav {
+    top: 3.5rem;
+  }
+}
 </style>

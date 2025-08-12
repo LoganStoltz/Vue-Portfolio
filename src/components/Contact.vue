@@ -82,7 +82,7 @@ export default defineComponent({
 
 .contact-header {
   text-align: center;
-  margin: 6rem 2rem;
+  margin: 4rem 2rem;
 }
 
 .contact-header h1 {
