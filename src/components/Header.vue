@@ -3,12 +3,12 @@
     <!-- Desktop Navigation -->
     <transition name="slideIn">
       <nav class="nav" v-if="isVisible && !mobile">
-        <router-link to="/" class="btn-home">Home</router-link>
-        <router-link to="/education" class="btn-education">Education</router-link>
-        <router-link to="/projects" class="btn-projects">Projects</router-link>
-        <router-link to="/externalLinks" class="btn-contact">External links</router-link>
-        <router-link to="/resume" class="btn-projects">Resume</router-link>
-        <router-link to="/contact" class="btn-contact">Contact Me</router-link>
+        <router-link to="/#top" class="btn-home">Home</router-link>
+        <router-link to="/education#top" class="btn-education">Education</router-link>
+        <router-link to="/projects#top" class="btn-projects">Projects</router-link>
+        <router-link to="/externalLinks#top" class="btn-contact">External links</router-link>
+        <router-link to="/resume#top" class="btn-projects">Resume</router-link>
+        <router-link to="/contact#top" class="btn-contact">Contact Me</router-link>
       </nav>
     </transition>
 
@@ -26,12 +26,12 @@
     <!-- Mobile Slide-out Navigation -->
     <transition name="mobile-nav">
       <nav class="dropdown-nav" v-show="mobileNav">
-        <router-link @click="closeMobileNav" to="/" class="mobile-btn-home">Home</router-link>
-        <router-link @click="closeMobileNav" to="/education" class="mobile-btn-education">Education</router-link>
-        <router-link @click="closeMobileNav" to="/projects" class="mobile-btn-projects">Projects</router-link>
-        <router-link @click="closeMobileNav" to="/externalLinks" class="mobile-btn-contact">External links</router-link>
-        <router-link @click="closeMobileNav" to="/resume" class="mobile-btn-projects">Resume</router-link>
-        <router-link @click="closeMobileNav" to="/contact" class="mobile-btn-contact">Contact Me</router-link>
+        <router-link @click="closeMobileNav" to="/#top" class="mobile-btn-home">Home</router-link>
+        <router-link @click="closeMobileNav" to="/education#top" class="mobile-btn-education">Education</router-link>
+        <router-link @click="closeMobileNav" to="/projects#top" class="mobile-btn-projects">Projects</router-link>
+        <router-link @click="closeMobileNav" to="/externalLinks#top" class="mobile-btn-contact">External links</router-link>
+        <router-link @click="closeMobileNav" to="/resume#top" class="mobile-btn-projects">Resume</router-link>
+        <router-link @click="closeMobileNav" to="/contact#top" class="mobile-btn-contact">Contact Me</router-link>
       </nav>
     </transition>
   </header>
