@@ -180,9 +180,17 @@
     padding: 0rem;
   }
 
+  .classes-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem;
+    overflow-y: hidden;
+  }
+
   .class-card {
-    padding: 1.5rem;
-    min-height: 0;
+    padding: 1rem;
+    min-height: auto;
   }
 
   .class-card h2 {

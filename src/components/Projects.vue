@@ -217,6 +217,8 @@ export default defineComponent({
     grid-template-columns: 1fr;
     padding: 1rem;
     margin: 0;
+    gap: 1.5rem;
+    overflow-y: hidden;
   }
   .projects-header h1 {
     font-size: 2rem;
@@ -228,8 +230,9 @@ export default defineComponent({
 
   .project-card {
     flex-direction: column !important;
-    min-height: 100vh;
+    min-height: fit-content;
     padding: 1rem;
+    margin: 0rem ;
     justify-content: flex-start;
   }
 

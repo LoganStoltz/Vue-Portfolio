@@ -191,12 +191,13 @@ export default defineComponent({
   }
 
   .content {
+    gap: 4rem;
     margin: 0;
-    padding: 2rem;
+    padding: 1rem;
   }
 
   .section {
-    padding: 2rem;
+    padding: 1rem;
   }
 
   .section h2 {

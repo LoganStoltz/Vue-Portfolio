@@ -217,16 +217,16 @@ export default defineComponent({
 
 @media (max-width: 768px) {
   .dropdown-nav {
-    width: 45%;
+    width: 55%;
     max-width: 300px;
     z-index: 999;
     border-bottom-left-radius: var(--radius-large);
   }
 
   .dropdown-nav a {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     font-weight: bold;
-    padding: 1.5rem 2rem;
+    padding: 1.2rem 1.75rem;
   }
 }
 </style>
