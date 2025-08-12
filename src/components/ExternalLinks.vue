@@ -182,10 +182,11 @@ export default defineComponent({
   
   .contact-section {
     flex-direction: column;
+    margin: 0;
   }
 
   .contact-image {
-    padding: 2rem;
+    padding: 1rem;
   }
 
   .contact-header h1 {
@@ -195,16 +196,14 @@ export default defineComponent({
   .contact-header p {
     font-size: 1.1rem;
   }
+  
+  .contact-links {
+    padding: 1rem;
+  }
 
   .contact-link h3 {
     font-size: 1.5rem;
     font-weight: 600;
-  }
-}
-
-@media (max-width: 499px) {
-  .contact-link h3 {
-    font-size: 1.15rem;
   }
 }
 </style>
