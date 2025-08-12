@@ -72,7 +72,7 @@ export default defineComponent({
 .contact-main-section {
   font-family: 'Inter', sans-serif;
   background: var(--main-background-dark);
-  overflow-x: hidden;
+  overflow-y: hidden;
 }
 
 .contact-header {
@@ -177,7 +177,6 @@ export default defineComponent({
 @media (max-width: 768px) {
   .contact-main-section {
     padding: 0rem;
-    padding-top: 3rem;
   }
   
   .contact-section {
@@ -196,7 +195,7 @@ export default defineComponent({
   .contact-header p {
     font-size: 1.1rem;
   }
-  
+
   .contact-links {
     padding: 1rem;
   }
