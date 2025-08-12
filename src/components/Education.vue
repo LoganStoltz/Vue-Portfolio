@@ -82,12 +82,10 @@
 .education-main-section {
   font-family: 'Inter', sans-serif;
   background: var(--main-background-dark);
-  padding: 4rem 5%;
   overflow-x: hidden;
 }
 
 .education-header {
-  max-width: 900px;
   margin: 6rem 2rem;
   text-align: center;
 }
@@ -115,6 +113,7 @@
   background: rgba(0, 0, 0, 0.192);
   border-radius: 16px;
   padding: 2rem;
+  margin: 2rem;
 }
 
 /* COURSE CARD */
@@ -186,6 +185,7 @@
     gap: 1.5rem;
     padding: 1rem;
     overflow-y: hidden;
+    margin: 0;
   }
 
   .class-card {

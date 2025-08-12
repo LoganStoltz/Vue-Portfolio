@@ -114,6 +114,8 @@ export default defineComponent({
   grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
   background: rgba(0, 0, 0, 0.192);
   border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem;
 }
 
 .project-card {

@@ -30,13 +30,13 @@ p {
     line-height: 1.7;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 930px) {
   .footer {
     padding: 0rem;
   }
   
   p {
-    font-size: small;
+    font-size: 1rem;
   }
 }
 
@@ -46,7 +46,7 @@ p {
   }
   
   p {
-    font-size: smaller;
+    font-size: 0.7rem;
   }
 }
 </style>

@@ -72,7 +72,6 @@ export default defineComponent({
 .contact-main-section {
   font-family: 'Inter', sans-serif;
   background: var(--main-background-dark);
-  min-height: 100vh;
   overflow-x: hidden;
 }
 
@@ -101,7 +100,7 @@ export default defineComponent({
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 5rem;
+  margin: 2rem;
   gap: 2rem;
 }
 
