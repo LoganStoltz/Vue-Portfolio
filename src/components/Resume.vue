@@ -1,6 +1,6 @@
 <template>
   <div class="pdf-viewer">
-    <embed src="/LoganStoltzPortfolio.pdf" type="application/pdf" />
+    <iframe src="src/assets/LoganStoltzPortfolio.pdf" type="application/pdf" />
   </div>
 </template>
 
@@ -12,7 +12,7 @@
   padding: 0;
 }
 
-embed {
+iframe {
   max-width: 1000px;
   width: 100%;
   height: 1122px;
@@ -23,7 +23,7 @@ embed {
 
 /* Responsive */
 @media (max-width: 768px) {
-  embed {
+  iframe {
     height: 682px;
   }
 }
