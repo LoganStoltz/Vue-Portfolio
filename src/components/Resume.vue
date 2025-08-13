@@ -1,7 +1,7 @@
 <template>
   <div class="pdf-viewer">
     <iframe
-      src="public/LoganStoltzPortfolio.pdf"
+      src="/LoganStoltzPortfolio.pdf"
       frameborder="0"
     ></iframe>
   </div>
@@ -21,6 +21,7 @@ iframe {
   height: 1122px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
   background: white;
+
 }
 
 /* Responsive */
