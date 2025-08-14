@@ -49,13 +49,39 @@ export default defineComponent({
       message: ''
     });
 
-    const submitForm = () => {
-      alert(`Thanks, ${form.name}! Your message has been sent.`);
-      form.name = '';
-      form.email = '';
-      form.phone = '';
-      form.message = '';
-    }
+    const submitForm = async () => {
+      try {
+        const response = await fetch("https://lzxhpbok0f.execute-api.us-east-2.amazonaws.com/prod/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+            name: form.name,
+            email: form.email,
+            phone: form.phone,
+            message: form.message
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error(`Error: ${response.status}`);
+        }
+
+        alert(`Thanks, ${form.name}! Your message has been sent.`);
+        
+        // Reset the form
+        form.name = '';
+        form.email = '';
+        form.phone = '';
+        form.message = '';
+
+      } catch (error) {
+        console.error("Error sending message:", error);
+        alert("Sorry, there was a problem sending your message. Please try again.");
+      }
+    };
+
     
     onMounted(() => {
       visibleHeader.value = true;
