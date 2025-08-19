@@ -1,35 +1,60 @@
 <template>
   <section class="contact-main-section">
-    <transition name="slide-in">
-      <div class="contact-header" v-if="visibleHeader">
-        <h1>Contact Me</h1>
-        <p>Welcome to the contact page, Thank you for your consideration.</p>
+    <!-- Contact Info Header -->
+    <transition name="slide-in" @after-enter="revealNextSection">
+      <div class="contact-header" v-if="visibleSections.infoHeader">
+        <h1>Contact Information</h1>
+        <p>Feel free to reach out using any of the methods below.</p>
       </div>
     </transition>
 
-    <form class="contact-form" @submit.prevent="submitForm">
-      <div class="form-group">
-        <label for="name">Your Name</label>
-        <input type="text" id="name" v-model="form.name" required />
+    <!-- Contact Info -->
+    <transition name="fade" @after-enter="revealNextSection">
+      <div class="contact-info-section" v-if="visibleSections.info">
+        <div class="contact-info" v-if="visibleSections.infoHeader">
+          <h2>Personal Email:</h2><h3>loganstoltz1234@gmail.com</h3>
+          <h2>School Email:</h2><h3>lstoltz@ewu.edu</h3>
+          <h2>Phone Number:</h2><h3>(775)-276-0061</h3>
+        </div>
       </div>
+    </transition>
 
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" v-model="form.email" required />
+    <!-- Contact Form Header -->
+    <transition name="slide-in" @after-enter="revealNextSection">
+      <div class="contact-header" v-if="visibleSections.formHeader">
+        <h1>Contact Form</h1>
+        <p>Email me directly using this Contact Form</p>
       </div>
+    </transition>
 
-      <div class="form-group">
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" v-model="form.phone" />
+    <!-- Contact Form -->
+    <transition name="fade" @after-enter="revealNextSection">
+      <div class="contact-form-section" v-if="visibleSections.form">
+        <form class="contact-form" @submit.prevent="submitForm">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" v-model="form.name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" v-model="form.email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" v-model="form.phone" />
+          </div>
+
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" rows="5" v-model="form.message" required></textarea>
+          </div>
+
+          <button type="submit" class="submit-button">Send Message</button>
+        </form>
       </div>
-
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" rows="5" v-model="form.message" required></textarea>
-      </div>
-
-      <button type="submit" class="submit-button">Send Message</button>
-    </form>
+    </transition>
   </section>
 </template>
 
@@ -40,7 +65,23 @@ import { defineComponent, ref, onMounted } from 'vue';
 export default defineComponent({
   name: 'Contact Me',
   setup() {
-    const visibleHeader = ref(false);
+    const visibleSections = ref({
+      infoHeader: false,
+      info: false,
+      formHeader: false,
+      form: false,
+    });
+
+    const sectionOrder = ['infoHeader', 'info', 'formHeader', 'form'];
+    let current = 0;
+
+    const revealNextSection = () => {
+      current += 1;
+      if (current < sectionOrder.length) {
+        const next = sectionOrder[current];
+        visibleSections.value[next] = true;
+      }
+    };
 
     const form = reactive({
       name: '',
@@ -84,11 +125,12 @@ export default defineComponent({
 
     
     onMounted(() => {
-      visibleHeader.value = true;
+      visibleSections.value.infoHeader = true;
     });
 
     return {
-      visibleHeader,
+      visibleSections,
+      revealNextSection,
       form,
       submitForm
     };
@@ -102,7 +144,8 @@ export default defineComponent({
 .contact-main-section {
   font-family: 'Inter', sans-serif;
   background: var(--main-background-dark);
-  overflow-x: hidden;
+  overflow: hidden;
+  min-height: 100vh;
 }
 
 .contact-header {
@@ -125,14 +168,66 @@ export default defineComponent({
   line-height: 1.7;
 }
 
+.contact-info-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.192);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem auto;        
+  box-shadow: var(--box-shadow-default);
+  width: 60%;
+  
+}
+
+.contact-info {
+  background: var(--background-light);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 2rem;
+  margin: 1rem;
+  box-sizing: border-box;
+  box-shadow: var(--box-shadow-default);
+  border-radius: 16px;
+  width: 100%;
+}
+
+.contact-info h2 {
+  font-size: 2rem;
+  color: var(--text-dark-on-light);
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.contact-info h3 {
+  font-size: 1.85rem;
+  color: var(--text-dark-on-light);
+  font-weight: 600;
+}
+
 /* Form */
+.contact-form-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.192);
+  border-radius: 16px;
+  padding: 2rem;
+  margin: 2rem auto;        
+  box-shadow: var(--box-shadow-default);
+  width: 80%;
+}
+
 .contact-form {
   background: var(--background-light);
   padding: 2rem;
   border-radius: 16px;
   box-shadow: var(--box-shadow-default);
-  max-width: 1000px;
   margin: 0 auto;
+  width: 100%;
 }
 
 .form-group {
@@ -183,8 +278,36 @@ textarea:focus {
   color: var(--background-header);
 }
 
+@media (max-width: 1450px) {
+  .contact-info-section {
+    width: 70%;
+  }
+  
+  .contact-info h2 {
+    font-size: 1.75rem;
+  }
+
+  .contact-info h3 {
+  font-size: 1.75rem;
+  }
+}
+
+@media (max-width: 1080px) {
+  .contact-info-section {
+    width: 80%;
+  }
+  
+  .contact-info h2 {
+    font-size: 1.5rem;
+  }
+
+  .contact-info h3 {
+  font-size: 1.5rem;
+  }
+}
+
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 870px) {
   .contact-section {
     flex-direction: column;
   }
@@ -196,10 +319,44 @@ textarea:focus {
   .contact-header p {
     font-size: 1.1rem;
   }
+  
+  .contact-info-section {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    margin: 0;
+    width: 100%;
+  }
+
+  .contact-info {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+    text-align: center;
+  }
+
+  .contact-info h2 {
+    font-size: 1.75rem;
+    margin-bottom: 0rem;
+  }
+
+  .contact-info h3 {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .contact-info h3:last-child {
+    margin-bottom: 0rem;
+  }
+
+  .contact-form-section {
+    padding: 1rem;
+    margin: 0rem;
+    width: 100%;
+
+  }
 
   .contact-form {
+    margin: 0rem;
     padding: 1rem;
-    margin: 1rem;
   }
 
   .submit-button {

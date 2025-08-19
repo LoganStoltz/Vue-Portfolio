@@ -87,6 +87,7 @@ export default defineComponent({
   font-family: 'Inter', sans-serif;
   background: var(--main-background-dark);
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 .projects-header {

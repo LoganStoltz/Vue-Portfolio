@@ -21,7 +21,8 @@ export default {
   background: var(--main-background-dark, #1a1a1a);
   display: flex;
   justify-content: center;
-  padding: 0;
+  padding-bottom: 2rem;
+  min-height: 100vh;
 }
 
 iframe {
@@ -35,6 +36,10 @@ iframe {
 
 /* Responsive */
 @media (max-width: 768px) {
+  .pdf-viewer {
+    min-height: 0;
+  }
+
   iframe {
     height: 682px;
   }

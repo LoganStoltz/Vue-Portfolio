@@ -70,4 +70,17 @@ export default defineComponent({
   opacity: 1;
   transform: translateX(0);
 }
+
+/* ANIMATION */
+.fade-enter-active {
+  transition: all 0.6s ease;
+}
+.fade-enter-from {
+  opacity: 0;
+  transform: translateY(30px);
+}
+.fade-enter-to {
+  opacity: 1;
+  transform: translateY(0);
+}
 </style>

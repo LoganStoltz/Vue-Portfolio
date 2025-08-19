@@ -78,6 +78,7 @@ export default defineComponent({
   font-family: 'Inter', sans-serif;
   background: var(--main-background-dark);
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 /* HERO SECTION */
@@ -87,7 +88,6 @@ export default defineComponent({
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 4rem 5%;
   background: var(--main-background-dark);
 }
 
@@ -116,9 +116,8 @@ export default defineComponent({
   padding: 2rem;
   background: rgba(0, 0, 0, 0.192);
   border-radius: 16px;
-  margin-left: 5rem;
-  margin-right: 5rem;
-  gap: 5rem;
+  margin: 2rem;
+  gap: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -152,20 +151,6 @@ export default defineComponent({
   flex-direction: column;
   gap: 1rem;
   align-items: stretch;
-}
-
-
-/* ANIMATION */
-.fade-enter-active {
-  transition: all 0.6s ease;
-}
-.fade-enter-from {
-  opacity: 0;
-  transform: translateY(30px);
-}
-.fade-enter-to {
-  opacity: 1;
-  transform: translateY(0);
 }
 
 

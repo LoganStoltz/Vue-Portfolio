@@ -73,6 +73,7 @@ export default defineComponent({
   font-family: 'Inter', sans-serif;
   background: var(--main-background-dark);
   overflow: hidden;
+    min-height: 100vh;
 }
 
 .contact-header {
