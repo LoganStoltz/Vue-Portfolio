@@ -7,6 +7,10 @@
       </div>
     </transition>
     <div class="contact-section">
+      <div class="contact-image">
+        <img src="@/assets/contact-page-image.png.png" alt="Logan Stoltz" />
+      </div>
+
       <transition-group name="fade" tag="div" class="contact-links">
         <a
           class="contact-link"
@@ -17,13 +21,9 @@
           :href="conlink.link"
         >
           <h3>{{ conlink.name }}</h3>
-          <component :is="conlink.icon" width="50" height="50" />
+          <component :is="conlink.icon" class="contact-icon" width="50" height="50" />
         </a>
       </transition-group>
-
-      <div class="contact-image">
-        <img src="@/assets/contact-page-image.png.png" alt="Logan Stoltz" />
-      </div>
     </div>
   </section>
 </template>
@@ -72,14 +72,13 @@ export default defineComponent({
 .contact-main-section {
   font-family: 'Inter', sans-serif;
   background: var(--main-background-dark);
-  padding: 4rem 5%;
-  min-height: 100vh;
-  overflow-x: hidden;
+  overflow: hidden;
+    min-height: 100vh;
 }
 
 .contact-header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin: 6rem 2rem;
 }
 
 .contact-header h1 {
@@ -102,7 +101,7 @@ export default defineComponent({
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin-bottom: 5rem;
+  margin: 2rem;
   gap: 2rem;
 }
 
@@ -113,7 +112,9 @@ export default defineComponent({
   flex-direction: column;
   flex-wrap: wrap;
   gap: 1.2rem;
-  margin-top: 1rem;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.192);
+  border-radius: 16px;
 }
 
 .contact-links a {
@@ -135,6 +136,10 @@ export default defineComponent({
 .contact-link:hover {
   background-color: var(--accent-yellow);
   transform: translateY(-3px);
+}
+
+.contact-icon {
+    filter: brightness(0) invert(1);
 }
 
 .contact-link h3 {
@@ -171,16 +176,34 @@ export default defineComponent({
 
 /* Responsive */
 @media (max-width: 768px) {
+  .contact-main-section {
+    padding: 0rem;
+  }
+  
   .contact-section {
     flex-direction: column;
+    margin: 0;
+  }
+
+  .contact-image {
+    padding: 1rem;
   }
 
   .contact-header h1 {
-    font-size: 2rem;
+    font-size: 2.75rem;
   }
 
   .contact-header p {
     font-size: 1.1rem;
+  }
+
+  .contact-links {
+    padding: 1rem;
+  }
+
+  .contact-link h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
   }
 }
 </style>

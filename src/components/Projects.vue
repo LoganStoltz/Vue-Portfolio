@@ -21,10 +21,23 @@
           <h4>{{ project.languages }}</h4>
           <p> {{ project.description }}</p>
           <div class="project-links">
-            <a :href="project.githubLink" class="github-link" target="_blank" rel="noopener">View on Github</a>
-            <div v-if="project.projectLink">
-              <a :href="project.projectLink" class="project-link" target="_blank" rel="noopener">View Project</a>
-            </div>
+            <a 
+              :href="project.githubLink" 
+              class="github-link" 
+              target="_blank" 
+              rel="noopener"
+              >
+                View on Github
+            </a>
+            <a 
+              v-if="project.projectLink"
+              :href="project.projectLink" 
+              class="project-link" 
+              target="_blank" 
+              rel="noopener"
+              >
+                View Project
+              </a>
           </div>
         </div>
       </div>
@@ -40,9 +53,9 @@ export default defineComponent({
   setup() {
       const allProjects = [
         { id: 1, title: 'Data Structure Visualizer', tools: 'Visual Studio Code, Firebase, Github', languages: 'HTML, Javascript, CSS', githubLink: 'https://github.com/Evebarr20/data-structure-visualizer', projectLink: 'https://datastructurevisualizer.netlify.app/stack', description: 'I worked with a team to develop an online data structure visualizer aimed at helping students understand key concepts like Stacks, Doubly Linked Lists, Binary Search Trees, and Max-Heaps. My contribution focused on building the Stack page, where I created an interactive control panel allowing users to push, pop, peek, and clear elements in a stack, with real-time visual updates and an adjustable animation speed. I also implemented educational sections that showcased stack implementations in Python, C, and Java, along with a detailed breakdown of time complexities and common use cases. This project was shaped by feedback from our professors at Eastern Washington University, who guided us toward addressing the areas students struggle with the most.' },
-        { id: 2, title: 'CYK Parser', tools: 'Visual Studio Code, Firebase, Github', languages: 'HTML, Javascript, CSS', githubLink: 'https://github.com/LoganStoltz/CYK-Parser', description: 'This program uses the Cocke–Younger–Kasami (CYK) algorithm to process a text input containing Context-Free Grammars (CFGs) and evaluates strings to determine whether they belong to the languages defined by the corresponding CFGs. It can parse grammars, construct parse trees, and apply language membership tests based on CYK parsing algorithms. The program has a time complexity of O(n^3 · |G|), where n is the length of the input string and |G| is the size of the grammar.' },
-        { id: 3, title: 'LL(1) Parser', tools: 'Visual Studio Code, Firebase, Github', languages: 'HTML, Javascript, CSS', githubLink: 'https://github.com/LoganStoltz/LL-1-Parser', description: 'This program uses the LL(1) algorithm to process text input containing context-free grammars (CFGs) and evaluates strings to determine whether they belong to the languages defined by the corresponding CFGs. It can compute the FIRST and FOLLOWS for each non-terminal, constructing an LL(1) Parse Table from them to compute whether the grammar is in LL(1), and then applying language membership tests based on the LL(1) parsing algorithm.' },
-        { id: 4, title: 'Vue Portfolio', tools: 'Visual Studio Code, Firebase, Github', languages: 'HTML, Javascript, CSS', githubLink: 'https://github.com/LoganStoltz/Vue-Portfolio', projectLink: 'https://loganstoltz.com', description: 'This Portfolio' }//,
+        { id: 2, title: 'Vue Portfolio', tools: 'Visual Studio Code, Github, AWS Amplify, Vite, Vue.js', languages: 'HTML, Javascript, CSS', githubLink: 'https://github.com/LoganStoltz/Vue-Portfolio', projectLink: 'https://loganstoltz.com', description: 'I built a modern, mobile-friendly portfolio using Vue.js and Vite to showcase my projects, education, and skills. It’s got dedicated sections for Home, Education, Projects, External Links, Resume, and Contact, all tied together with a clean, responsive navigation bar. I designed custom components, added SVG icons, smooth animations, and even an embedded PDF viewer for my resume. The site is fast, easy to navigate, and hosted on AWS Amplify.' },
+        { id: 3, title: 'CYK Parser', tools: 'IntelliJ IDEA, Github', languages: 'Java', githubLink: 'https://github.com/LoganStoltz/CYK-Parser', description: 'This program uses the Cocke–Younger–Kasami (CYK) algorithm to process a text input containing Context-Free Grammars (CFGs) and evaluates strings to determine whether they belong to the languages defined by the corresponding CFGs. It can parse grammars, construct parse trees, and apply language membership tests based on CYK parsing algorithms. The program has a time complexity of O(n^3 · |G|), where n is the length of the input string and |G| is the size of the grammar.' },
+        { id: 4, title: 'LL(1) Parser', tools: 'IntelliJ IDEA, Github', languages: 'Java', githubLink: 'https://github.com/LoganStoltz/LL-1-Parser', description: 'This program uses the LL(1) algorithm to process text input containing context-free grammars (CFGs) and evaluates strings to determine whether they belong to the languages defined by the corresponding CFGs. It can compute the FIRST and FOLLOWS for each non-terminal, constructing an LL(1) Parse Table from them to compute whether the grammar is in LL(1), and then applying language membership tests based on the LL(1) parsing algorithm.' }
         //{ id: 5, title: 'Example', tools: 'Visual Studio Code, Firebase, Github', languages: 'HTML, Javascript, CSS', githubLink: 'https://example.com/Github', projectLink: 'https://example.com/project1', description: '(PLACEHOLDER)' }
       ];
 
@@ -73,15 +86,12 @@ export default defineComponent({
 .projects-main-section {
   font-family: 'Inter', sans-serif;
   background: var(--main-background-dark);
-  margin: 0;
-  padding: 0;
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 .projects-header {
-  max-width: 75vw;
-  margin: 0 auto;
-  padding: 4rem 5% 2rem;
+  margin: 6rem 2rem;
   text-align: center;
 }
 
@@ -98,23 +108,22 @@ export default defineComponent({
   font-size: 1.65rem;
   color: var(--text-muted);
   line-height: 1.7;
-  padding-bottom: 4rem;
 }
 
 .projects-section {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30vw, 1fr));
-  padding: 1rem 1rem;
   background: rgba(0, 0, 0, 0.192);
   border-radius: 16px;
-  margin: 0rem 5rem;
+  padding: 2rem;
+  margin: 2rem;
 }
 
 .project-card {
   min-height: 50vh;
   background: var(--background-light);
-  align-items: center;
-  justify-content: center;
+  display: flex;
+  flex-direction: column; 
   padding: 2rem;
   margin: 1rem;
   box-sizing: border-box;
@@ -129,8 +138,9 @@ export default defineComponent({
 
 /* Content wrapper */
 .project-content {
-  max-width: 800px;
-  width: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .project-content h2 {
@@ -142,10 +152,10 @@ export default defineComponent({
 }
 
 .project-content h4 {
-  text-align: center;
   font-size: 1.1rem;
   font-weight: 600;
-  color: var(--text-dark-on-light);
+  color: var(--text-dark);
+  text-align: center;
 }
 
 .project-content p {
@@ -153,22 +163,25 @@ export default defineComponent({
   line-height: 1.7;
   color: var(--text-dark-on-light);
   margin-top: 1rem;
+  margin-bottom: 1.5rem;
+  text-align: left;
 }
 
 .project-links {
   display: flex;
-  align-content: stretch;
-  justify-content: center;
+  margin-top: auto;
   gap: 1rem;
-  margin-top: 1.5rem;
   width: 100%;
 }
 
 .project-links a {
+  flex: 1;
   display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: var(--background-blue);
   color: var(--text-primary);
-  padding: 1rem 2rem;
+  padding: 1rem;
   border: none;
   border-radius: 10px;
   font-size: 1.1rem;
@@ -208,9 +221,11 @@ export default defineComponent({
     grid-template-columns: 1fr;
     padding: 1rem;
     margin: 0;
+    gap: 1.5rem;
+    overflow-y: hidden;
   }
   .projects-header h1 {
-    font-size: 2rem;
+    font-size: 2.75rem;
   }
 
   .projects-header p {
@@ -219,8 +234,9 @@ export default defineComponent({
 
   .project-card {
     flex-direction: column !important;
-    min-height: 100vh;
+    min-height: fit-content;
     padding: 1rem;
+    margin: 0rem ;
     justify-content: flex-start;
   }
 
@@ -232,8 +248,17 @@ export default defineComponent({
     font-size: 2rem;
   }
 
-  .project-content p {
+  .project-content h4 {
     font-size: 1rem;
+  }
+
+  .project-content p {
+    font-size: 0.85rem;
+  }
+
+    .project-links a {
+    font-size: 0.8rem;
+    font-weight: 400;
   }
 }
 </style>

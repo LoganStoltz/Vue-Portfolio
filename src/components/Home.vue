@@ -78,6 +78,7 @@ export default defineComponent({
   font-family: 'Inter', sans-serif;
   background: var(--main-background-dark);
   overflow-x: hidden;
+  min-height: 100vh;
 }
 
 /* HERO SECTION */
@@ -87,7 +88,6 @@ export default defineComponent({
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  padding: 4rem 5%;
   background: var(--main-background-dark);
 }
 
@@ -100,31 +100,35 @@ export default defineComponent({
   margin-bottom: 2rem;
   line-height: 1.2;
   margin: 0 auto;
-  margin-top: -10rem;
+  margin-top: -5rem;
 }
 
 .tagline {
   font-size: 2rem;
   color: var(--text-muted);
   font-weight: 500;
-  max-width: 90%;
-  line-height: 1.7;
-  margin: 0 auto;
+  line-height: 1.5;
+  margin: 5px auto;
 }
 
 /* MAIN CONTENT BELOW HERO */
 .content {
-  width: 100%;
-  padding: 4rem 5%;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.192);
+  border-radius: 16px;
+  margin: 2rem;
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* SECTION BOX */
 .section {
   background: var(--background-light);
-  padding: 3rem 3rem;
+  padding: 2rem 3rem;
   border-radius: 16px;
   box-shadow: var(--box-shadow-default);
-  margin-bottom: 4rem;
 }
 
 .section h2 {
@@ -136,7 +140,7 @@ export default defineComponent({
 
 .section p {
   font-size: 1.5rem;
-  color: #000000;
+  color: var(--text-dark-on-light);
   line-height: 2;
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -150,19 +154,6 @@ export default defineComponent({
 }
 
 
-/* ANIMATION */
-.fade-enter-active {
-  transition: all 0.6s ease;
-}
-.fade-enter-from {
-  opacity: 0;
-  transform: translateY(30px);
-}
-.fade-enter-to {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* RESPONSIVE */
 @media (max-width: 1030px) {
   .name {
@@ -171,6 +162,7 @@ export default defineComponent({
 
   .hero p {
     font-size: 1.35rem;
+    text-align: center;
   }
 }
 
@@ -179,12 +171,23 @@ export default defineComponent({
     font-size: 4rem;
   }
 
+  .hero p {
+    font-size: 1.1rem;
+  }
+
   .tagline {
     font-size: 1.5rem;
   }
 
+  .content {
+    gap: 4rem;
+    margin: 0;
+    padding: 1rem;
+    overflow-y: hidden;
+  }
+
   .section {
-    padding: 2rem;
+    padding: 1rem;
   }
 
   .section h2 {
@@ -192,7 +195,7 @@ export default defineComponent({
   }
 
   .section p {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .link-button {
@@ -200,7 +203,7 @@ export default defineComponent({
     padding: 0.8rem 1.2rem;
   }
 
-    .grid-layout {
+  .grid-layout {
     display: flex;
     flex-direction: column;
   }
@@ -213,6 +216,16 @@ export default defineComponent({
   .connect,
   .mission {
     width: 100%;
+  }
+}
+
+@media (max-width: 499px) {
+  .name {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 0.9rem;
   }
 }
 </style>

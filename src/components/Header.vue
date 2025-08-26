@@ -3,19 +3,19 @@
     <!-- Desktop Navigation -->
     <transition name="slideIn">
       <nav class="nav" v-if="isVisible && !mobile">
-        <router-link to="/" class="btn-home">Home</router-link>
-        <router-link to="/education" class="btn-education">Education</router-link>
-        <router-link to="/projects" class="btn-projects">Projects</router-link>
-        <router-link to="/externalLinks" class="btn-contact">External links</router-link>
-        <router-link to="/resume" class="btn-projects">Resume</router-link>
-        <router-link to="/contact" class="btn-contact">Contact Me</router-link>
+        <router-link to="/#top" class="btn-home">Home</router-link>
+        <router-link to="/education#top" class="btn-education">Education</router-link>
+        <router-link to="/projects#top" class="btn-projects">Projects</router-link>
+        <router-link to="/externalLinks#top" class="btn-contact">External links</router-link>
+        <router-link to="/resume#top" class="btn-projects">Resume</router-link>
+        <router-link to="/contact#top" class="btn-contact">Contact Me</router-link>
       </nav>
     </transition>
 
     <!-- Hamburger Icon (Mobile Only) -->
   <div v-if="mobile">
     <img
-      src="../assets/hamburgerIcon.svg"
+      :src="hamburgerIcon"
       alt="Menu"
       class="hamburger-icon"
       :class="{ 'icon-active': mobileNav }"
@@ -26,12 +26,12 @@
     <!-- Mobile Slide-out Navigation -->
     <transition name="mobile-nav">
       <nav class="dropdown-nav" v-show="mobileNav">
-        <router-link @click="closeMobileNav" to="/" class="mobile-btn-home">Home</router-link>
-        <router-link @click="closeMobileNav" to="/education" class="mobile-btn-education">Education</router-link>
-        <router-link @click="closeMobileNav" to="/projects" class="mobile-btn-projects">Projects</router-link>
-        <router-link @click="closeMobileNav" to="/externalLinks" class="mobile-btn-contact">External links</router-link>
-        <router-link @click="closeMobileNav" to="/resume" class="mobile-btn-projects">Resume</router-link>
-        <router-link @click="closeMobileNav" to="/contact" class="mobile-btn-contact">Contact Me</router-link>
+        <router-link @click="closeMobileNav" to="/#top" class="mobile-btn-home">Home</router-link>
+        <router-link @click="closeMobileNav" to="/education#top" class="mobile-btn-education">Education</router-link>
+        <router-link @click="closeMobileNav" to="/projects#top" class="mobile-btn-projects">Projects</router-link>
+        <router-link @click="closeMobileNav" to="/externalLinks#top" class="mobile-btn-contact">External links</router-link>
+        <router-link @click="closeMobileNav" to="/resume#top" class="mobile-btn-projects">Resume</router-link>
+        <router-link @click="closeMobileNav" to="/contact#top" class="mobile-btn-contact">Contact Me</router-link>
       </nav>
     </transition>
   </header>
@@ -39,6 +39,7 @@
 
 <script lang="js">
 import { defineComponent, ref, onMounted, onUnmounted } from 'vue';
+import hamburgerIcon from '@/assets/hamburgerIcon.svg?url'
 
 export default defineComponent({
   name: 'Header',
@@ -77,6 +78,7 @@ export default defineComponent({
       mobileNav,
       toggleMobileNav,
       closeMobileNav,
+      hamburgerIcon
     };
   }
 });
@@ -152,6 +154,7 @@ export default defineComponent({
   flex-direction: column;
   box-shadow: -2px 2 10px rgba(0, 0, 0, 0.2);
   z-index: 999;
+  border-bottom-left-radius: var(--radius-large);
 }
 
 .dropdown-nav a {
@@ -166,6 +169,10 @@ export default defineComponent({
 .dropdown-nav a:hover {
   color: #ffd166;
   background: var(--background-header);
+}
+
+.dropdown-nav a:last-child {
+  border-bottom-left-radius: var(--radius-large);
 }
 
 /* SLIDE-IN ANIMATION (DESKTOP NAV) */
@@ -206,6 +213,29 @@ export default defineComponent({
   .header {
     justify-content: flex-start;
     padding: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .dropdown-nav {
+    width: 55%;
+    max-width: 300px;
+    z-index: 999;
+  }
+
+  .dropdown-nav a {
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 1.2rem 1.75rem;
+  }
+}
+
+@media (max-width: 499px) {
+  .header {
+    height: 3.5rem;
+  }
+  .dropdown-nav {
+    top: 3.5rem;
   }
 }
 </style>
