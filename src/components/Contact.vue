@@ -157,6 +157,7 @@ export default defineComponent({
   font-size: 3rem;
   font-weight: 800;
   background: var(--heading-gradient);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 1rem;
