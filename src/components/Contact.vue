@@ -92,7 +92,7 @@ export default defineComponent({
 
     const submitForm = async () => {
       try {
-        const response = await fetch("https://47jsn0vqs4.execute-api.us-east-2.amazonaws.com/prod/contact", {
+        const response = await fetch("https://47jsn0vqs4.execute-api.us-east-2.amazonaws.com/prod", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
