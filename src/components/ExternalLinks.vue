@@ -8,7 +8,7 @@
     </transition>
     <div class="contact-section">
       <div class="contact-image">
-        <img src="@/assets/contact-page-image2.png" alt="Logan Stoltz" />
+        <img src="@/assets/contact-page-image.png.png" alt="Logan Stoltz" />
       </div>
 
       <transition-group name="fade" tag="div" class="contact-links">
