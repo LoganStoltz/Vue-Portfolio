@@ -42,7 +42,8 @@ export default defineComponent({
       { id: 1, name: 'GitHub', link: 'https://github.com/LoganStoltz', icon: GithubIcon},
       { id: 2, name: 'LeetCode', link: 'https://leetcode.com/u/lstoltz/', icon: LeetCodeIcon},
       { id: 3, name: 'LinkedIn', link: 'https://www.linkedin.com/in/logan-stoltz/', icon: LinkedInIcon},
-      { id: 4, name: 'HackerRank', link: 'https://www.hackerrank.com/profile/loganstoltz1234', icon: HackerRankIcon}
+      { id: 4, name: 'HandShake', link: 'https://ewu.joinhandshake.com/profiles/loganstoltz', icon: HackerRankIcon}//,
+      //{ id: 5, name: 'HackerRank', link: 'https://www.hackerrank.com/profile/loganstoltz1234', icon: HackerRankIcon}
     ];
 
     const visibleHeader = ref(false);
