@@ -27,11 +27,11 @@
     <transition name="mobile-nav">
       <nav class="dropdown-nav" v-show="mobileNav">
         <router-link @click="closeMobileNav" to="/#top" class="mobile-btn-home">Home</router-link>
-        <router-link @click="closeMobileNav" to="/education#top" class="mobile-btn-education">Education</router-link>
-        <router-link @click="closeMobileNav" to="/projects#top" class="mobile-btn-projects">Projects</router-link>
-        <router-link @click="closeMobileNav" to="/externalLinks#top" class="mobile-btn-contact">External links</router-link>
-        <router-link @click="closeMobileNav" to="/resume#top" class="mobile-btn-projects">Resume</router-link>
-        <router-link @click="closeMobileNav" to="/contact#top" class="mobile-btn-contact">Contact Me</router-link>
+        <router-link @click="closeMobileNav" to="/education" class="mobile-btn-education">Education</router-link>
+        <router-link @click="closeMobileNav" to="/projects" class="mobile-btn-projects">Projects</router-link>
+        <router-link @click="closeMobileNav" to="/externalLinks" class="mobile-btn-contact">External links</router-link>
+        <router-link @click="closeMobileNav" to="/resume" class="mobile-btn-projects">Resume</router-link>
+        <router-link @click="closeMobileNav" to="/contact" class="mobile-btn-contact">Contact Me</router-link>
       </nav>
     </transition>
   </header>
