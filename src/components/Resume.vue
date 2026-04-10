@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import pdfFile from "/LoganStoltzPortfolio.pdf";
+import pdfFile from "../assets/resume.pdf";
 
 export default {
   data() {
