@@ -7,15 +7,6 @@
         <p class="headline">Pursuing junior full-stack and software development roles.</p>
         <p class="tagline">I like building practical web applications and learning tools that make development cleaner, faster, and easier to maintain.</p>
 
-        <div class="hero-details">
-          <p>
-            My recent work has centered on web development with Vue, Next.js, and Node.js, while I continue strengthening my backend skills with Ruby, Rails, and Python.
-          </p>
-          <p>
-            I am looking for a junior role where I can contribute early, learn from experienced developers, and keep expanding across the stack.
-          </p>
-        </div>
-
         <div class="stack-chips">
           <span v-for="item in highlightedStack" :key="item" class="stack-chip">{{ item }}</span>
         </div>
