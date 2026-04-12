@@ -207,17 +207,16 @@ export default defineComponent({
 }
 
 .project-content h2 {
-  width: calc(100% + 4rem);
-  text-align: center;
-  font-size: 2.3rem;
+  width: 100%;
+  font-size: 2rem;
   font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  color: #70e2ff;
-  margin: -2rem 0 1.25rem -2rem;
-  padding: 1.35rem 2rem 1.15rem;
-  background: linear-gradient(135deg, #14476c 0%, #1b6897 100%);
-  border-radius: 16px 16px 0 0;
+  text-align: center;
+  color: var(--accent-blue);
+  margin: 0 0 1.5rem 0;
+  padding: 0 0 1rem 0;
+  background: none;
+  border-radius: 0;
+  border-bottom: 3px solid lightblue;
 }
 
 .project-meta {

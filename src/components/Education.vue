@@ -145,13 +145,18 @@
   font-size: 1.5rem;
   font-weight: 700;
   color: var(--accent-blue);
-  margin-bottom: 0.5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  border-bottom: 3px solid lightblue;
 }
 
 .class-card h3 {
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 600;
+  text-align: center;
   color: var(--text-dark);
+  padding: 0.1rem;
   margin-bottom: 1rem;
 }
 
@@ -205,6 +210,8 @@
 
   .class-card h2 {
     font-size: 1.25rem;
+    border-bottom: 0px;
+    padding: 0px;
   }
 
   .class-card h3 {

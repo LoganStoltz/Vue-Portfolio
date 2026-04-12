@@ -8,7 +8,9 @@
     </transition>
     <div class="contact-section">
       <div class="contact-image">
-        <img src="@/assets/contact-page-image2.png" alt="Logan Stoltz" />
+        <transition name="fade-zoom" mode="out-in">
+          <img :key="visibleprofilePicture" :src="visibleprofilePicture" alt="Logan Stoltz" />
+        </transition>
       </div>
 
       <transition-group name="fade" tag="div" class="contact-links">
@@ -34,10 +36,20 @@ import GithubIcon from '@/assets/github.svg';
 import LinkedInIcon from '@/assets/linkedin.svg';
 import HackerRankIcon from '@/assets/hackerrank.svg';
 import LeetCodeIcon from '@/assets/leetcode.svg';
+import Pic1 from '@/assets/contact-page-image2.png';
+import Pic2 from '@/assets/contact-page-image3.png';
 
 export default defineComponent({
   name: 'Links',
   setup() {
+    const profilePictures = [
+      { id: 1, src: Pic1, alt: 'Profile Picture 1' },
+      { id: 2, src: Pic2, alt: 'Profile Picture 2' }
+    ];
+
+    const visibleprofilePicture = ref(profilePictures[0].src);
+
+
     const allConlinks = [
       { id: 1, name: 'GitHub', link: 'https://github.com/LoganStoltz', icon: GithubIcon},
       { id: 2, name: 'LeetCode', link: 'https://leetcode.com/u/lstoltz/', icon: LeetCodeIcon},
@@ -52,16 +64,22 @@ export default defineComponent({
 
     onMounted(() => {
       visibleHeader.value = true;
+      let currentImageIndex = 0;
       allConlinks.forEach((conlink, index) => {
         setTimeout(() => {
           visibleConlinks.value.push(conlink);
         }, index * delay);
       });
+      setInterval(() => {
+        currentImageIndex = (currentImageIndex + 1) % profilePictures.length;
+        visibleprofilePicture.value = profilePictures[currentImageIndex].src;
+      }, 5000); // Every 5 seconds, switch to the next profile picture
     });
 
     return {
       visibleHeader,
-      visibleConlinks
+      visibleConlinks,
+      visibleprofilePicture
     };
   }
 });
@@ -163,6 +181,8 @@ export default defineComponent({
   border-radius: 16px;
 }
 
+
+/* Slide-in Animation for external links */
 .fade-enter-active {
   transition: all 0.5s ease;
 }
@@ -174,6 +194,21 @@ export default defineComponent({
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Fade Zoom Animation for profile pictures */
+.fade-zoom-enter-active, .fade-zoom-leave-active {
+  transition: all 0.5s ease;
+}
+.fade-zoom-enter-from {
+  opacity: 0;
+  transform: scale(0.95);
+}
+.fade-zoom-leave-to {
+  opacity: 0;
+  transform: scale(1.05);
+}
+
+
 
 /* Responsive */
 @media (max-width: 768px) {
