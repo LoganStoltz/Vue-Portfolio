@@ -1,7 +1,6 @@
 <template>
   <footer class="footer">
-    <p>Website created by Logan Stoltz using Vue</p>
-    <p>Hosted using AWS Amplify</p>
+    <p>Created by Logan Stoltz, 2025 | &copy; All rights reserved</p>
   </footer>
 </template>
 
