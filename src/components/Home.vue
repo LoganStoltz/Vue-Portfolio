@@ -4,7 +4,7 @@
       <div class="hero" v-if="visibleSections.hero">
         <p class="eyebrow">Junior Software Developer</p>
         <h1 class="name">{{ name }}</h1>
-        <p class="headline">Pursuing junior full-stack and software development roles.</p>
+        <p class="headline">Pursuing Junior Full-Stack and Software Development Roles.</p>
         <p class="tagline">I like building practical web applications and learning tools that make development cleaner, faster, and easier to maintain.</p>
 
         <div class="stack-chips">
