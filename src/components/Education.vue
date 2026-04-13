@@ -211,7 +211,7 @@
   .class-card h2 {
     font-size: 1.25rem;
     border-bottom: 0px;
-    padding: 0px;
+    padding: 0px-;
   }
 
   .class-card h3 {
