@@ -367,8 +367,10 @@ export default defineComponent({
   }
 
   .stack-chip {
-    width: 100%;
     text-align: center;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.9rem;
+    margin: auto 0.25rem;
   }
 }
 </style>
