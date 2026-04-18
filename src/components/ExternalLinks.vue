@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { defineComponent, ref, onMounted } from 'vue';
+import { defineComponent, ref, markRaw, onMounted } from 'vue';
 import GithubIcon from '@/assets/github.svg';
 import LinkedInIcon from '@/assets/linkedin.svg';
 import HackerRankIcon from '@/assets/hackerrank.svg';
@@ -51,11 +51,11 @@ export default defineComponent({
 
 
     const allConlinks = [
-      { id: 1, name: 'GitHub', link: 'https://github.com/LoganStoltz', icon: GithubIcon},
-      { id: 2, name: 'LeetCode', link: 'https://leetcode.com/u/lstoltz/', icon: LeetCodeIcon},
-      { id: 3, name: 'LinkedIn', link: 'https://www.linkedin.com/in/logan-stoltz/', icon: LinkedInIcon},
-      { id: 4, name: 'HandShake', link: 'https://ewu.joinhandshake.com/profiles/loganstoltz', icon: HackerRankIcon}//,
-      //{ id: 5, name: 'HackerRank', link: 'https://www.hackerrank.com/profile/loganstoltz1234', icon: HackerRankIcon}
+      { id: 1, name: 'GitHub', link: 'https://github.com/LoganStoltz', icon: markRaw(GithubIcon)},
+      { id: 2, name: 'LeetCode', link: 'https://leetcode.com/u/lstoltz/', icon: markRaw(LeetCodeIcon)},
+      { id: 3, name: 'LinkedIn', link: 'https://www.linkedin.com/in/logan-stoltz/', icon: markRaw(LinkedInIcon)},
+      { id: 4, name: 'HandShake', link: 'https://ewu.joinhandshake.com/profiles/loganstoltz', icon: markRaw(HackerRankIcon)}//,
+      //{ id: 5, name: 'HackerRank', link: 'https://www.hackerrank.com/profile/loganstoltz1234', icon: markRaw(HackerRankIcon)}
     ];
 
     const visibleHeader = ref(false);
