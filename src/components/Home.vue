@@ -1,6 +1,6 @@
 <template>
   <section class="home">
-    <transition name="fade" @after-enter="revealNextSection">
+    <transition name="hero-fade" @after-enter="revealNextSection">
       <div class="hero" v-if="visibleSections.hero">
         <p class="eyebrow">Junior Software Developer</p>
         <h1 class="name">{{ name }}</h1>
@@ -118,6 +118,16 @@ export default defineComponent({
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
+.hero-fade-enter-active {
+  transition: opacity 0.7s ease;
+}
+.hero-fade-enter-from {
+  opacity: 0;
+}
+.hero-fade-enter-to {
+  opacity: 1;
+}
+
 .home {
   font-family: 'Inter', sans-serif;
   background: var(--main-background-dark);
@@ -192,19 +202,25 @@ export default defineComponent({
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
   max-width: 1120px;
-  margin: 2.5rem auto 0;
+  margin: 4rem auto 0;
+  row-gap: 1.5rem;
+  column-gap: 2rem;
 }
 
 .stack-chip {
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 999px;
-  color: var(--text-primary);
-  padding: 0.75rem 1.1rem;
-  font-size: 1rem;
-  letter-spacing: 0.03rem;
+  color: var(--text-secondary);
+  padding: 0.4rem 0.6rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.06rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--accent-yellow);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.stack-chip:hover {
+  color: var(--accent-yellow);
+  border-color: var(--accent-yellow);
 }
 
 .content {
@@ -298,19 +314,23 @@ export default defineComponent({
 
 @media (max-width: 768px) {
   .hero {
-    padding: 2.35rem 1.15rem 6.15rem;
+    padding: 5.5rem 1.15rem 4rem;
+    justify-content: flex-start;
   }
 
   .name {
-    font-size: 4rem;
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
   }
 
   .headline {
-    font-size: 1.65rem;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
   }
 
   .tagline {
-    font-size: 1.2rem;
+    font-size: 1.05rem;
+    margin-top: 1rem;
   }
 
   .hero-details {
@@ -354,16 +374,23 @@ export default defineComponent({
 
 @media (max-width: 499px) {
   .name {
-    font-size: 2.5rem;
+    font-size: 3.25rem;
   }
 
   .headline {
-    font-size: 1.3rem;
+    font-size: 1.15rem;
+    margin-top: 1.25rem;
+  }
+
+  .tagline {
+    font-size: 0.95rem;
+    margin-top: 1.25rem;
   }
 
   .eyebrow {
     font-size: 0.8rem;
     letter-spacing: 0.16rem;
+    margin-bottom: 1.5rem;
   }
 
   .stack-chip {

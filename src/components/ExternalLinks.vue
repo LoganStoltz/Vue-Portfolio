@@ -73,7 +73,7 @@ export default defineComponent({
       setInterval(() => {
         currentImageIndex = (currentImageIndex + 1) % profilePictures.length;
         visibleprofilePicture.value = profilePictures[currentImageIndex].src;
-      }, 5000); // Every 5 seconds, switch to the next profile picture
+      }, 3000); // Every 3 seconds, switch to the next profile picture
     });
 
     return {
